@@ -5,6 +5,7 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class SpellingController : MonoBehaviour
@@ -51,6 +52,7 @@ public class SpellingController : MonoBehaviour
     [Space][Header("Values")]
     [SerializeField] private float timeStartGame = 10f; //Time till game starts
     [SerializeField] private float timeQuestion = 10f; //Time between questions
+    [SerializeField] private float timeBetweenQuestion = 3f;
     [SerializeField] private float animSpeed = 0.25f;
 
 
@@ -67,10 +69,10 @@ public class SpellingController : MonoBehaviour
     {
         questionList = ShuffleQuestion(animalManager.animalList, questionAmount);
         ShuffleAnswerAndDisplayQuestion(answerZones, questionList[currentQuestion]);
-        StartCoroutine(StartCountDown(timeStartGame));
+        StartCoroutine(StartCountDown(timeStartGame,CheckQuestion));
     }
 
-    private IEnumerator StartCountDown(float second)
+    private IEnumerator StartCountDown(float second,Action EventToCall)
     {
         countDownText.text = "";
         countDownImage.fillAmount = 1; //Fill up the countdown image
@@ -83,7 +85,7 @@ public class SpellingController : MonoBehaviour
             second -= Time.deltaTime;
             yield return null;
         }
-        CheckQuestion();
+        EventToCall.Invoke();
     }
 
     private List<Animal> ShuffleQuestion(List<Animal> animalList, int amountQuestion)
@@ -133,20 +135,20 @@ public class SpellingController : MonoBehaviour
         displayText.DOText(textToDisplay, animSpeed);
     }
 
-    private void NextQuestion()
+    IEnumerator WaitBetweenQuestion(float waitTime)
     {
-        OnQuestionChange?.Invoke();
-        currentQuestion++;
-        if (currentQuestion >= questionAmount)
+        countDownText.text = "";
+        countDownImage.fillAmount = 1; //Fill up the countdown image
+        //Tween fillAmount to zero based on second and call a function
+        DOTween.To(() => countDownImage.fillAmount, x => countDownImage.fillAmount = x, 0, waitTime).SetEase(Ease.Linear);
+        while (waitTime > 0)
         {
-            OnGameEnd?.Invoke();
-            print("FINISHED");
+            waitTime -= Time.deltaTime;
+            countDownText.text = "" + (int)waitTime;
+            yield return null;
         }
-        else if (currentQuestion < questionAmount)
-        {
-            ShuffleAnswerAndDisplayQuestion(answerZones, questionList[currentQuestion]);
-            StartCoroutine(StartCountDown(timeQuestion));
-        }
+        ShuffleAnswerAndDisplayQuestion(answerZones, questionList[currentQuestion]);
+        StartCoroutine(StartCountDown(timeQuestion, CheckQuestion));
     }
 
     private void CheckQuestion()
@@ -162,7 +164,25 @@ public class SpellingController : MonoBehaviour
             print("INCORRECT");
             //Decrease health and check for game over
         }
-        NextQuestion();
+
+        currentQuestion++;
+
+        if (currentQuestion >= questionAmount)
+        {
+            OnGameEnd?.Invoke();
+            print("FINISHED");
+        }
+        else if (currentQuestion < questionAmount)
+        {
+            NextQuestion();
+        }
+
+    }
+
+    private void NextQuestion()
+    {
+        OnQuestionChange?.Invoke();
+        StartCoroutine(WaitBetweenQuestion(timeBetweenQuestion));
     }
 
     public static void OnPlayerEnterZone(string word)

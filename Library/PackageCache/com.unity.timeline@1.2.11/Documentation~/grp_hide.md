@@ -1,9 +1,21 @@
-# Collapsing and expanding Track groups
-
-To collapse the tracks in a Track group, click the Triangle icon beside the name of the Track group. The tracks are collapsed from view in the Timeline window, not muted. To expand the tracks in a Track group, click the Triangle icon again.
-
-![Triangle icon (circled) collapses the tracks in the Game Board Track group. A ghost track visually represents the tracks in the collapsed group.](images/timeline_track_group_hidden.png)
-
-_Triangle icon (circled) collapses the tracks in the Game Board Track group. A ghost track visually represents the tracks in the collapsed group._
-
-You can also press the Left Arrow key to collapse the tracks in a Track group while the Track group is selected. Press the Right Arrow key to expand the tracks in a Track group. If you press the Right Arrow key with a Track group already selected, the selection switches to the first selectable clip on the first track in the Track group.
+<!DOCTYPE ParticleEffect SYSTEM '../../../dtd/particle_effect.dtd'>
+<ParticleEffect maxParticles="1" space="Local" timeToEmit="0.100" name="ColoringCandyBlackImpact02PFX">
+    <Dampening max="0.400" min="0.700"/>
+    <DirectionalForce x="0" y="0"/>
+    <Emitter emissionRate="0" spread="360" angle="0">
+        <SpawnArea width="10" depth="0" height="10"/>
+    </Emitter>
+    <EndColor b="255" r="255" g="255" a="0"/>
+    <Rotation max="0" min="0"/>
+    <RotationSpeed max="0" min="0"/>
+    <Size>
+        <Max x="100" y="100"/>
+        <Min x="60" y="60"/>
+    </Size>
+    <SizeChange>
+        <Max x="-140" y="-140"/>
+        <Min x="-50" y="-50"/>
+    </SizeChange>
+    <StartColor b="255" r="255" g="255" a="255"/>
+    <Texture numFramesY="1" blend="Multiply" numFramesX="1" filename="shared/bootstrap/particles/tex/coloring_candy_impact_black_02.png"/>
+    <TextureFrame numTextureAnimationFrames="1" textureAnimationSpeed="50" startF

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51afbdeed00636448b2701ee250dbeb5, type: 3}
   m_Name: Turtle
   m_EditorClassIdentifier: 
-  animalSprite: {fileID: 21300000, guid: e465690be94d5de40aacc2d195e5f918, type: 3}
+  animalSprite: {fileID: 21300000, guid: bf43c3aefc541b9409f0af4100bdcefa, type: 3}
   correctWord: Turtle
   wrongWord: Tuatle
   description: 

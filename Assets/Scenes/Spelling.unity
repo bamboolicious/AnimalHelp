@@ -2469,7 +2469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalManager: {fileID: 1853375814}
-  questionAmount: 5
+  questionAmount: 10
   questionList: []
   currentQuestion: 0
   animalSprite: {fileID: 5225619670309880474}
@@ -2479,6 +2479,7 @@ MonoBehaviour:
   - {fileID: 5225619669805821733}
   - {fileID: 139341751}
   correctWord: 
-  timeStartGame: 3
-  timeQuestion: 3
+  timeStartGame: 5
+  timeQuestion: 5
+  timeBetweenQuestion: 2
   animSpeed: 0.25

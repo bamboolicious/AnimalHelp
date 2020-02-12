@@ -27,8 +27,10 @@ public class StatusCheck : MonoBehaviour
 
     void PlayerAnswer()
     {
-        if (SpellingController.AnsweredWord != null) ;
-        answerText.text = "Answer : " + SpellingController.AnsweredWord;
+        if (SpellingController.AnsweredWord != null)
+        {
+            answerText.text = "Answer : " + SpellingController.AnsweredWord;
+        }
     }
 
     void OnGameEnd()
