@@ -1,21 +1,16 @@
-<!DOCTYPE ParticleEffect SYSTEM '../../../dtd/particle_effect.dtd'>
-<ParticleEffect maxParticles="24" space="Local" timeToEmit="0.150" name="ColoringCandyBlueDieSplatterPFX">
-    <Dampening max="0.860" min="0.680"/>
-    <DirectionalForce x="0" y="0"/>
-    <Emitter emissionRate="0" spread="360" angle="0">
-        <SpawnArea width="20" depth="0" height="20"/>
-    </Emitter>
-    <EndColor b="255" r="255" g="255" a="100"/>
-    <Rotation max="0" min="0"/>
-    <RotationSpeed max="0" min="0"/>
-    <Size>
-        <Max x="22" y="14"/>
-        <Min x="10" y="10"/>
-    </Size>
-    <SizeChange>
-        <Max x="-10" y="-10"/>
-        <Min x="-10" y="-10"/>
-    </SizeChange>
-    <StartColor b="255" r="255" g="255" a="255"/>
-    <Texture numFramesY="1" blend="Multiply" numFramesX="1" filename="shared/bootstrap/particles/tex/coloring_blue_blob64.png"/>
-    <TextureFrame numTextureAnimationFrames="1" textur
+# Setting clip properties
+
+Use the Inspector window to change the name of a clip and other properties, such as its timing and blend properties. The available properties depend on the type of clip selected. For example, select an Activation clip to change its name and set its **Clip Timing**.
+
+![Inspector window when selecting an Activation clip in the Timeline window](images/timeline_inspector_activation_clip.png)
+
+_Inspector window when selecting an Activation clip in the Timeline window_
+
+Not all clips have properties. See the following sections for clips with properties:
+
+* [Activation clip properties](insp_clp_act.md)
+* [Animation clip common properties](insp_clp_anim_com.md)
+* [Animation clip Playable Asset properties](insp_clp_anim_plyb.md)
+* [Audio clip properties](insp_clp_aud.md)
+* [Control clip common properties](insp_clp_ctrl_com.md)
+* [Control clip Playable Asset properties](insp_clp_ctrl_plyb.md)

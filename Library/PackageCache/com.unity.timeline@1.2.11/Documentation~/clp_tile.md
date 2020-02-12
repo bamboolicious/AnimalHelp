@@ -1,21 +1,16 @@
-<!DOCTYPE ParticleEffect SYSTEM '../../dtd/particle_effect.dtd'>
-<ParticleEffect maxParticles="10" space="Local" timeToEmit="0.100" name="ColorBombSwapSparkle">
-    <Dampening max="1.200" min="0.800"/>
-    <DirectionalForce x="0" y="-1400"/>
-    <Emitter emissionRate="0" spread="0" angle="0">
-        <SpawnArea width="50" depth="0" height="50"/>
-    </Emitter>
-    <EndColor b="255" r="255" g="255" a="0"/>
-    <Rotation max="0" min="0"/>
-    <RotationSpeed max="0" min="0"/>
-    <Size>
-        <Max x="65" y="122"/>
-        <Min x="65" y="122"/>
-    </Size>
-    <SizeChange>
-        <Max x="-32" y="-32"/>
-        <Min x="0" y="0"/>
-    </SizeChange>
-    <StartColor b="255" r="255" g="255" a="100"/>
-    <Texture numFramesY="1" blend="Multiply" numFramesX="1" filename="shared/bootstrap/particles/tex/nice_spark.png"/>
-    <TextureFrame numTextureAnimationFrames="1" textureAnimationSpeed="50" startFrame="0
+# Tiling clips
+
+Tile clips to remove gaps and blends between clips on the same track. Tiling clips is useful if you want each clip to begin exactly where the previous clip ends. If you select multiple clips on multiple tracks, you must select at least two clips on the same track for tiling to have an affect.
+
+To tile clips, select at least two clips on the same track.
+
+![Three clips with gaps and blends are selected](images/timeline_clips_tile_selection.png)
+
+_Three clips with gaps and blends are selected_
+
+Right-click on one of the selected clips and select Tile from the context menu. Timeline positions the selected clips based on the position of the first selected clip. The first selected clip does not move, and the duration of each clip remains the same.
+
+![Tiling removes gaps and blends between the selected clips](images/timeline_clips_tile_result.png)
+
+_Tiling removes gaps and blends between the selected clips_
+

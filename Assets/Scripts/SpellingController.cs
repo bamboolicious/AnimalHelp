@@ -25,7 +25,8 @@ public class SpellingController : MonoBehaviour
     }
 
     public delegate void PlayerEvent();
-    public static event PlayerEvent OnPlayerCorrect,OnPlayerWrong,OnPlayerAnswer,OnPlayerUnAnswer,OnQuestionChange,OnGameEnd;
+
+    public static event PlayerEvent OnGameStart,OnGameEnd,OnPlayerCorrect, OnPlayerWrong, OnPlayerAnswer, OnPlayerUnAnswer, OnQuestionChange;
 
     [SerializeField] private AnimalManager animalManager;
     
@@ -39,9 +40,8 @@ public class SpellingController : MonoBehaviour
     [Header("Display")]
     [SerializeField] private Image animalSprite;
     [SerializeField] private Image countDownImage;
-
     [SerializeField] private TextMeshProUGUI countDownText;
-    //[SerializeField] private List<TextMeshProUGUI> texts;
+
     [Space]
     [Header("Answers")]
     [SerializeField] private List<AnswerZone> answerZones; //To identify which answer has been chosen by the player
@@ -67,26 +67,30 @@ public class SpellingController : MonoBehaviour
 
     void OnStart()
     {
+        OnGameStart?.Invoke();
         questionList = ShuffleQuestion(animalManager.animalList, questionAmount);
-        ShuffleAnswerAndDisplayQuestion(answerZones, questionList[currentQuestion]);
-        StartCoroutine(StartCountDown(timeStartGame,CheckQuestion));
+        StartCoroutine(StartCountDown(timeStartGame,ShuffleAnswerAndDisplayQuestion));
     }
-
-    private IEnumerator StartCountDown(float second,Action EventToCall)
+    
+    
+    private IEnumerator StartCountDown(float second,Action eventToCall)
     {
-        countDownText.text = "";
-        countDownImage.fillAmount = 1; //Fill up the countdown image
-
-        //Tween fillAmount to zero based on second and call a function
-        DOTween.To(() => countDownImage.fillAmount, x => countDownImage.fillAmount = x, 0, second).SetEase(Ease.Linear);
+        AnimateCountdown(second);
         while (second > 0) //Countdown to zero;
         {
             countDownText.text = "" + (int) second;
             second -= Time.deltaTime;
             yield return null;
         }
-        EventToCall.Invoke();
+        eventToCall.Invoke();
     }
+
+    private void AnimateCountdown(float duration)
+    {
+        countDownImage.fillAmount = 1;
+        countDownImage.DOFillAmount(0, duration).SetEase(Ease.Linear);
+    }
+    
 
     private List<Animal> ShuffleQuestion(List<Animal> animalList, int amountQuestion)
     {
@@ -102,11 +106,12 @@ public class SpellingController : MonoBehaviour
         return randomizedList;
     }
 
-    private void ShuffleAnswerAndDisplayQuestion(List<AnswerZone> answerList, Animal question)
+    private void ShuffleAnswerAndDisplayQuestion()
     {
-        List<AnswerZone> tempList = new List<AnswerZone>(answerList);
+        OnQuestionChange?.Invoke();
+        List<AnswerZone> tempList = new List<AnswerZone>(answerZones);
 
-        animalSprite.sprite = question.animalSprite; //Set sprite
+        animalSprite.sprite = questionList[currentQuestion].animalSprite; //Set sprite
         animalSprite.rectTransform.DOPunchScale(Vector2.up, animSpeed, 1, 1f); //Animate sprite bounce
 
         bool correctWordPlaced = false; //Check if correct word has been placed. If so, just put wrong words everywhere else
@@ -116,39 +121,24 @@ public class SpellingController : MonoBehaviour
             {
                 if (!correctWordPlaced)
                 {
-                    DisplayAnswerText(tempList[i].answerText, question.correctWord);
-                    correctWord = question.correctWord; //Keep correct word to check if player gets the answer right
+                    DisplayAnswerText(tempList[i].answerText, questionList[currentQuestion].correctWord);
+                    correctWord = questionList[currentQuestion].correctWord; //Keep correct word to check if player gets the answer right
                     correctWordPlaced = true; //There can only be one correct word
                 }
                 else
                 {
-                    DisplayAnswerText(tempList[i].answerText, question.wrongWord);
+                    DisplayAnswerText(tempList[i].answerText, questionList[currentQuestion].wrongWord);
                 }
                 tempList.RemoveAt(i); //Remove from temp list so doesn't loop over again
                 i = 0; //So the list starts at the beginning
             }
         }
+        StartCoroutine(StartCountDown(timeQuestion, CheckQuestion)); //START THE COUNTDOWN
     }
 
     private void DisplayAnswerText(TextMeshProUGUI displayText, string textToDisplay)
     {
         displayText.DOText(textToDisplay, animSpeed);
-    }
-
-    IEnumerator WaitBetweenQuestion(float waitTime)
-    {
-        countDownText.text = "";
-        countDownImage.fillAmount = 1; //Fill up the countdown image
-        //Tween fillAmount to zero based on second and call a function
-        DOTween.To(() => countDownImage.fillAmount, x => countDownImage.fillAmount = x, 0, waitTime).SetEase(Ease.Linear);
-        while (waitTime > 0)
-        {
-            waitTime -= Time.deltaTime;
-            countDownText.text = "" + (int)waitTime;
-            yield return null;
-        }
-        ShuffleAnswerAndDisplayQuestion(answerZones, questionList[currentQuestion]);
-        StartCoroutine(StartCountDown(timeQuestion, CheckQuestion));
     }
 
     private void CheckQuestion()
@@ -174,29 +164,20 @@ public class SpellingController : MonoBehaviour
         }
         else if (currentQuestion < questionAmount)
         {
-            NextQuestion();
+            StartCoroutine(StartCountDown(timeBetweenQuestion, ShuffleAnswerAndDisplayQuestion));
         }
-
-    }
-
-    private void NextQuestion()
-    {
-        OnQuestionChange?.Invoke();
-        StartCoroutine(WaitBetweenQuestion(timeBetweenQuestion));
     }
 
     public static void OnPlayerEnterZone(string word)
     {
         OnPlayerAnswer?.Invoke();
         AnsweredWord = word;
-        //print("ANSWER : " + word);
     }
 
     public static void OnPlayerExitZone()
     {
         OnPlayerUnAnswer?.Invoke();
         AnsweredWord = "";
-        //print("UNANSWERED");
     }
     
 }
