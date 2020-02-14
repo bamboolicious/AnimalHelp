@@ -46,6 +46,8 @@
           <e p="Animal.cs" t="Include" />
           <e p="AnimalManager.cs" t="Include" />
           <e p="AnswerZone.cs" t="Include" />
+          <e p="AnswerZoneMatch.cs" t="Include" />
+          <e p="MatchingController.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="SpellingController.cs" t="Include" />
           <e p="StatusCheck.cs" t="Include" />
