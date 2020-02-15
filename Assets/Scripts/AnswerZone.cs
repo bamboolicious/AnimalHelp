@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 public class AnswerZone : MonoBehaviour
@@ -6,20 +7,29 @@ public class AnswerZone : MonoBehaviour
     // //public bool isCorrectWord = false;
     // public string displayText;
     public TextMeshProUGUI answerText;
-    
-    private void OnTriggerStay2D(Collider2D other)
+    public GameController gameController;
+
+    private void Awake()
     {
-        if (other.CompareTag("Player"))
+        if (gameController == null)
         {
-            SpellingController.OnPlayerEnterZone(answerText.text);
+            throw new Exception("GAMECONTROLLER NOT FOUND ON " + this.name);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    protected void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            SpellingController.OnPlayerExitZone();
+            gameController.OnPlayerEnterZone(answerText.text);
+        }
+    }
+
+    protected void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            gameController.OnPlayerExitZone();
         }
     }
     

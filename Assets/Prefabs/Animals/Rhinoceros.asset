@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51afbdeed00636448b2701ee250dbeb5, type: 3}
   m_Name: Rhinoceros
   m_EditorClassIdentifier: 
-  animalSprite: {fileID: 21300000, guid: e465690be94d5de40aacc2d195e5f918, type: 3}
+  animalSprite: {fileID: 21300000, guid: c4d54688a1f750b41a6a6a5358e91e2f, type: 3}
   correctWord: Rhinoceros
   wrongWord: Rhinoceraus
   description: 

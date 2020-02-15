@@ -27,11 +27,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
     
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         var x = Input.GetAxis("Horizontal");
@@ -41,6 +36,7 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
+        if (isFrozen) return;
         CheckGround();
         Walk(moveDir);
         Jump();
@@ -63,10 +59,7 @@ public class PlayerController : MonoBehaviour
 
     private void Walk(Vector2 moveDirection)
     {
-        if (isFrozen) return;
-        
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed,rb.velocity.y);
-        
+        rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
     }
 
     // private void OnTriggerEnter2D(Collider2D other)
