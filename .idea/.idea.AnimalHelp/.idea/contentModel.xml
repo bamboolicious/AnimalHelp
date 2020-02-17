@@ -50,11 +50,10 @@
             <e p="GameController.cs" t="Include" />
             <e p="MatchingController.cs" t="Include" />
             <e p="SpellingController.cs" t="Include" />
+            <e p="TransitionManager.cs" t="Include" />
+            <e p="VisualController.cs" t="Include" />
           </e>
           <e p="PlayerController.cs" t="Include" />
-          <e p="StatusCheck.cs" t="Include" />
-          <e p="TransitionManager.cs" t="Include" />
-          <e p="TriggerOnCollision.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

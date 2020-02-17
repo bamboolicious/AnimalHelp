@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class SpellingController : GameController
 {
     private static SpellingController _instance;
     public new static event PlayerEvent OnGameStart;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -30,12 +25,13 @@ public class SpellingController : GameController
 
     protected override void ShuffleAnswerAndDisplayQuestion()
     {
+        base.ShuffleAnswerAndDisplayQuestion();
+
         List<AnswerZone> tempList = new List<AnswerZone>(answerZones);
 
-        animalSprite.sprite = questionList[currentQuestion].animalSprite; //Set sprite
-        animalSprite.rectTransform.DOPunchScale(Vector2.up, animSpeed, 1, 1f); //Animate sprite bounce
-
-        bool correctWordPlaced = false; //Check if correct word has been placed. If so, just put wrong words everywhere else
+        bool
+            correctWordPlaced =
+                false; //Check if correct word has been placed. If so, just put wrong words everywhere else
         while (tempList.Count > 0)
         {
             for (int i = Random.Range(0, tempList.Count); i < tempList.Count; i++) //Random where to put the words
@@ -52,10 +48,12 @@ public class SpellingController : GameController
                 {
                     DisplayAnswerText(tempList[i].answerText, questionList[currentQuestion].wrongWord);
                 }
+
                 tempList.RemoveAt(i); //Remove from temp list so doesn't loop over again
                 i = 0; //So the list starts at the beginning
             }
         }
+
         StartCoroutine(StartCountDown(timeQuestion, CheckQuestion)); //START THE COUNTDOWN
     }
 }

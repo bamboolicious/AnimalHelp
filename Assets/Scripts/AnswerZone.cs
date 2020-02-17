@@ -1,36 +1,54 @@
 ﻿using System;
+using DG.Tweening;
+using Managers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnswerZone : MonoBehaviour
 {
     // //public bool isCorrectWord = false;
     // public string displayText;
+    [Header("References")]
+    public Image answerZone;
     public TextMeshProUGUI answerText;
     public GameController gameController;
+
+    [Space] [Header("Animation Values")] 
+    [SerializeField] private float punchMultiplier = 2f;
+
+    [SerializeField] private float punchDuration = 0.5f;
 
     private void Awake()
     {
         if (gameController == null)
         {
-            throw new Exception("GAMECONTROLLER NOT FOUND ON " + this.name);
+            gameController = FindObjectOfType<GameController>();
         }
+        if (answerText == null)
+        {
+            answerText = answerZone.GetComponentInChildren<TextMeshProUGUI>();
+        }
+
     }
 
-    protected void OnTriggerStay2D(Collider2D other)
+
+    private void OnPlayerHit()
     {
-        if (other.CompareTag("Player"))
-        {
-            gameController.OnPlayerEnterZone(answerText.text);
-        }
+        gameController.OnPlayerEnterZone(answerText.text);
+        answerZone.transform.DOPunchPosition(Vector2.up * punchMultiplier, punchDuration);
     }
 
-    protected void OnTriggerExit2D(Collider2D other)
+    public void OnPlayerExit()
     {
-        if (other.CompareTag("Player"))
-        {
-            gameController.OnPlayerExitZone();
-        }
+        gameController.OnPlayerExitZone();
     }
     
+    protected void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            OnPlayerHit();
+        }
+    }
 }

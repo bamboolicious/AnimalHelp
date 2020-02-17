@@ -125,11 +125,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0.1
   m_AngularDrag: 0.05
-  m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_GravityScale: 5
+  m_Material: {fileID: 6200000, guid: ac739c2f3a8465a45806f7ef5b2d8999, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &2336323570399497606
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpForce: 200
+  jumpForce: 1000
   downOffset: {x: 0, y: -0.25}
   collisionRadius: 0.3
   groundLayer:
@@ -152,3 +152,4 @@ MonoBehaviour:
     m_Bits: 256
   isFrozen: 0
   isGrounded: 1
+  jumped: 0

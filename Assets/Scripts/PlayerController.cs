@@ -1,4 +1,5 @@
 ﻿using System;
+using Managers;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -6,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 moveDir;
+    private Vector2 startPos;
     
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 10f;
@@ -21,9 +23,17 @@ public class PlayerController : MonoBehaviour
     //[SerializeField] private bool isJumping = false;
     [SerializeField] private bool isFrozen = false;
     [SerializeField] private bool isGrounded = false;
+    [SerializeField] private bool jumped = false;
     
     private void Awake()
     {
+        SetUp();
+    }
+
+    private void SetUp()
+    {
+        GameController.OnQuestionChange += ResetPlayerPos;
+        startPos = transform.position;
         rb = GetComponent<Rigidbody2D>();
     }
     
@@ -41,18 +51,26 @@ public class PlayerController : MonoBehaviour
         Walk(moveDir);
         Jump();
     }
+
+    private void ResetPlayerPos()
+    {
+        transform.position = startPos;
+        rb.velocity = Vector2.zero;
+    }
     
     private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + downOffset, collisionRadius, groundLayer);
+        if (isGrounded) jumped = false;
     }
     private void Jump()
     {
-        if (!isGrounded) return;
+        if (!isGrounded || jumped) return;
         
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButton("Jump"))
         {
             rb.AddForce(Vector2.up * jumpForce);
+            jumped = true;
         }
     }
 

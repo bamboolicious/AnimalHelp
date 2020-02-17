@@ -5,58 +5,69 @@ using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 using Random = UnityEngine.Random;
+
 
 public class GameController : MonoBehaviour
 {
-    private static GameController _instance;
-    public static GameController Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                GameObject gameController = new GameObject("GameController");
-                gameController.AddComponent<GameController>();
-            }
-            return _instance;
-        }
-    }
+    // private static GameController _instance;
+    // public static GameController Instance
+    // {
+    //     get
+    //     {
+    //         if (_instance == null)
+    //         {
+    //             GameObject gameController = new GameObject("SpellingController");
+    //             gameController.AddComponent<SpellingController>();
+    //         }
+    //         return _instance;
+    //     }
+    // }
 
     public delegate void PlayerEvent();
 
-    public static event PlayerEvent OnGameStart,OnGameEnd,OnPlayerCorrect, OnPlayerWrong, OnPlayerAnswer, OnPlayerUnAnswer, OnQuestionChange;
+    public static event PlayerEvent OnGameStart,
+        OnGameEnd,
+        OnPlayerCorrect,
+        OnPlayerWrong,
+        OnPlayerAnswer,
+        OnPlayerUnAnswer,
+        OnQuestionChange;
 
     [SerializeField] protected AnimalManager animalManager;
-    
-    [Space]
-    [Header("Questions")]
-    [SerializeField] protected int questionAmount = 10;
+
+    [Space] [Header("Questions")] [SerializeField]
+    protected int questionAmount = 10;
+
     [SerializeField] protected List<Animal> questionList;
     [SerializeField] protected int currentQuestion = 0;
 
-    [Space]
-    [Header("Display")]
-    [SerializeField] protected Image animalSprite;
+    [Space] [Header("Display")] public Image animalSprite;
+
     [SerializeField] protected Image countDownImage;
     [SerializeField] protected TextMeshProUGUI countDownText;
 
-    [Space]
-    [Header("Answers")]
-    [SerializeField] protected List<AnswerZone> answerZones; //To identify which answer has been chosen by the player
+    [Space] [Header("Answers")] [SerializeField]
+    protected List<AnswerZone> answerZones; //To identify which answer has been chosen by the player
+
     [SerializeField] protected string correctWord;
-    
+
     public static string AnsweredWord;
-    
-    [Space][Header("Values")]
-    [SerializeField] protected float timeStartGame = 10f; //Time till game starts
+
+    [Space] [Header("Values")] [SerializeField]
+    protected float timeStartGame = 10f; //Time till game starts
+
     [SerializeField] protected float timeQuestion = 10f; //Time between questions
     [SerializeField] protected float timeBetweenQuestion = 3f;
     [SerializeField] protected float animSpeed = 0.25f;
 
 
-    protected virtual void Awake() => _instance = this;
+    // protected virtual void Awake() => _instance = this;
+
+    public GameController GetInstance()
+    {
+        return this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -69,11 +80,11 @@ public class GameController : MonoBehaviour
     {
         OnGameStart?.Invoke();
         questionList = ShuffleQuestion(animalManager.animalList, questionAmount);
-        StartCoroutine(StartCountDown(timeStartGame,ShuffleAnswerAndDisplayQuestion));
+        StartCoroutine(StartCountDown(timeStartGame, ShuffleAnswerAndDisplayQuestion));
     }
 
 
-    protected virtual IEnumerator StartCountDown(float second,Action eventToCall)
+    protected virtual IEnumerator StartCountDown(float second, Action eventToCall)
     {
         AnimateCountdown(second);
         while (second > 0) //Countdown to zero;
@@ -82,14 +93,16 @@ public class GameController : MonoBehaviour
             second -= Time.deltaTime;
             yield return null;
         }
+
         eventToCall.Invoke();
     }
-
     protected virtual void AnimateCountdown(float duration)
     {
-        countDownImage.fillAmount = 1;
-        countDownImage.DOFillAmount(0, duration).SetEase(Ease.Linear);
+        //countDownImage.fillAmount = 1;
+        countDownImage.DOFillAmount(0, duration).SetEase(Ease.Linear).ChangeStartValue(1);
     }
+    
+    
 
 
     protected virtual List<Animal> ShuffleQuestion(List<Animal> animalList, int amountQuestion)
@@ -103,44 +116,35 @@ public class GameController : MonoBehaviour
             randomizedList.Add(tempList[randomNum]);
             tempList.RemoveAt(randomNum);
         }
+
         return randomizedList;
     }
 
     protected virtual void ShuffleAnswerAndDisplayQuestion()
     {
-        OnQuestionChange?.Invoke();
         animalSprite.sprite = questionList[currentQuestion].animalSprite; //Set sprite
-        animalSprite.rectTransform.DOPunchScale(Vector2.up, animSpeed, 1, 1f); //Animate sprite bounce
-
-        // bool correctWordPlaced = false; //Check if correct word has been placed. If so, just put wrong words everywhere else
-        // while (tempList.Count > 0)
-        // {
-        //     for (int i = Random.Range(0, tempList.Count); i < tempList.Count; i++) //Random where to put the words
-        //     {
-        //         if (!correctWordPlaced)
-        //         {
-        //             DisplayAnswerText(tempList[i].answerText, questionList[currentQuestion].correctWord);
-        //             correctWord = questionList[currentQuestion].correctWord; //Keep correct word to check if player gets the answer right
-        //             correctWordPlaced = true; //There can only be one correct word
-        //         }
-        //         else
-        //         {
-        //             DisplayAnswerText(tempList[i].answerText, questionList[currentQuestion].wrongWord);
-        //         }
-        //         tempList.RemoveAt(i); //Remove from temp list so doesn't loop over again
-        //         i = 0; //So the list starts at the beginning
-        //     }
-        // }
-        // StartCoroutine(StartCountDown(timeQuestion, CheckQuestion)); //START THE COUNTDOWN
+        animalSprite.DOFade(1, animSpeed);
+        animalSprite.rectTransform.DOShakeScale(animSpeed,animSpeed).SetEase(Ease.InOutQuint); //Animate sprite bounce
     }
 
-    protected virtual void DisplayAnswerText(TextMeshProUGUI displayText, string textToDisplay)
+    protected virtual void ClearVisuals()
+    {
+        //animalSprite.DOFade(0, animSpeed);
+        foreach (var zone in answerZones)
+        {
+            zone.answerText.text = "";
+        }
+    }
+
+    protected void DisplayAnswerText(TextMeshProUGUI displayText, string textToDisplay)
     {
         displayText.DOText(textToDisplay, animSpeed);
     }
 
     protected virtual void CheckQuestion()
     {
+        ClearVisuals();
+        ; //Clear the visual clutter so kids doesn't get confused
         if (AnsweredWord == correctWord)
         {
             OnPlayerCorrect?.Invoke();
@@ -162,20 +166,21 @@ public class GameController : MonoBehaviour
         }
         else if (currentQuestion < questionAmount)
         {
+            OnQuestionChange?.Invoke();
             StartCoroutine(StartCountDown(timeBetweenQuestion, ShuffleAnswerAndDisplayQuestion));
         }
     }
 
     public virtual void OnPlayerEnterZone(string word)
     {
-        OnPlayerAnswer?.Invoke();
         AnsweredWord = word;
+        OnPlayerAnswer?.Invoke();
     }
 
     public virtual void OnPlayerExitZone()
     {
-        OnPlayerUnAnswer?.Invoke();
         AnsweredWord = "";
+        OnPlayerUnAnswer?.Invoke();
     }
-    
+
 }

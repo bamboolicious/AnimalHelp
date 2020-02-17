@@ -294,6 +294,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FadeCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6823022084273045209, guid: d4bf0481878974b40ab2f7f842cf4840,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6823022084273045221, guid: d4bf0481878974b40ab2f7f842cf4840,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -416,12 +421,12 @@ PrefabInstance:
     - target: {fileID: 2336323570399497624, guid: fb8c99bd50978ed45b5bfaff7a719352,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.5
+      value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 2336323570399497624, guid: fb8c99bd50978ed45b5bfaff7a719352,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.5
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 2336323570399497624, guid: fb8c99bd50978ed45b5bfaff7a719352,
         type: 3}
@@ -546,6 +551,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3605949812060393590, guid: 0c929eec12d13734bbfdcddc67c7850c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -170
+      objectReference: {fileID: 0}
     - target: {fileID: 3605949812504458608, guid: 0c929eec12d13734bbfdcddc67c7850c,
         type: 3}
       propertyPath: animalManager
@@ -610,6 +620,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831498776365252664, guid: 0c929eec12d13734bbfdcddc67c7850c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831498777211479044, guid: 0c929eec12d13734bbfdcddc67c7850c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8831498777898066546, guid: 0c929eec12d13734bbfdcddc67c7850c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c929eec12d13734bbfdcddc67c7850c, type: 3}
