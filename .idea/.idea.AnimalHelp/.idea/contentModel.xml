@@ -46,12 +46,12 @@
           <e p="Animal.cs" t="Include" />
           <e p="AnswerZone.cs" t="Include" />
           <e p="Managers" t="Include">
+            <e p="AestheticController.cs" t="Include" />
             <e p="AnimalManager.cs" t="Include" />
             <e p="GameController.cs" t="Include" />
             <e p="MatchingController.cs" t="Include" />
             <e p="SpellingController.cs" t="Include" />
             <e p="TransitionManager.cs" t="Include" />
-            <e p="VisualController.cs" t="Include" />
           </e>
           <e p="PlayerController.cs" t="Include" />
         </e>

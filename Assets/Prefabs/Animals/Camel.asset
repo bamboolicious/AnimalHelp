@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51afbdeed00636448b2701ee250dbeb5, type: 3}
   m_Name: Camel
   m_EditorClassIdentifier: 
-  animalSprite: {fileID: 21300000, guid: 4fa68fcbbb9656c458cd4304297aff38, type: 3}
+  animalSprite: {fileID: 21300000, guid: fbcbe2221b7a8c042b46e97a859f4b28, type: 3}
   correctWord: Camel
   wrongWord: Caramel
   description: 

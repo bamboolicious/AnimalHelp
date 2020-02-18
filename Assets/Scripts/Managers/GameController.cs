@@ -61,12 +61,9 @@ public class GameController : MonoBehaviour
     [SerializeField] protected float timeBetweenQuestion = 3f;
     [SerializeField] protected float animSpeed = 0.25f;
 
-
-    // protected virtual void Awake() => _instance = this;
-
-    public GameController GetInstance()
+    private void Awake()
     {
-        return this;
+        questionList = ShuffleQuestion(animalManager.animalList, questionAmount);
     }
 
     // Start is called before the first frame update
@@ -79,7 +76,6 @@ public class GameController : MonoBehaviour
     protected virtual void OnStart()
     {
         OnGameStart?.Invoke();
-        questionList = ShuffleQuestion(animalManager.animalList, questionAmount);
         StartCoroutine(StartCountDown(timeStartGame, ShuffleAnswerAndDisplayQuestion));
     }
 
@@ -87,24 +83,22 @@ public class GameController : MonoBehaviour
     protected virtual IEnumerator StartCountDown(float second, Action eventToCall)
     {
         AnimateCountdown(second);
+        
         while (second > 0) //Countdown to zero;
         {
             countDownText.text = "" + (int) second;
             second -= Time.deltaTime;
             yield return null;
         }
-
+        
         eventToCall.Invoke();
     }
     protected virtual void AnimateCountdown(float duration)
     {
-        //countDownImage.fillAmount = 1;
-        countDownImage.DOFillAmount(0, duration).SetEase(Ease.Linear).ChangeStartValue(1);
+        countDownImage.fillAmount = 1;
+        countDownImage.DOFillAmount(0, duration).SetEase(Ease.Linear);
     }
     
-    
-
-
     protected virtual List<Animal> ShuffleQuestion(List<Animal> animalList, int amountQuestion)
     {
         List<Animal> tempList = new List<Animal>(animalList);

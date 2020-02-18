@@ -19,6 +19,8 @@ public class AnswerZone : MonoBehaviour
 
     [SerializeField] private float punchDuration = 0.5f;
 
+    private Tweener punchTween;
+
     private void Awake()
     {
         if (gameController == null)
@@ -29,14 +31,18 @@ public class AnswerZone : MonoBehaviour
         {
             answerText = answerZone.GetComponentInChildren<TextMeshProUGUI>();
         }
-
+        CreateTween();
     }
 
-
+    void CreateTween()
+    {
+        punchTween = answerZone.transform.DOPunchPosition(Vector2.up * punchMultiplier, punchDuration)
+            .SetAutoKill(false);
+    }
     private void OnPlayerHit()
     {
+        punchTween.Restart();
         gameController.OnPlayerEnterZone(answerText.text);
-        answerZone.transform.DOPunchPosition(Vector2.up * punchMultiplier, punchDuration);
     }
 
     public void OnPlayerExit()
