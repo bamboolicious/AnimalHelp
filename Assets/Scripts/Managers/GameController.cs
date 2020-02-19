@@ -8,21 +8,9 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 
+[RequireComponent(typeof(Health))]
 public class GameController : MonoBehaviour
 {
-    // private static GameController _instance;
-    // public static GameController Instance
-    // {
-    //     get
-    //     {
-    //         if (_instance == null)
-    //         {
-    //             GameObject gameController = new GameObject("SpellingController");
-    //             gameController.AddComponent<SpellingController>();
-    //         }
-    //         return _instance;
-    //     }
-    // }
 
     public delegate void PlayerEvent();
 
@@ -57,12 +45,19 @@ public class GameController : MonoBehaviour
     [Space] [Header("Values")] [SerializeField]
     protected float timeStartGame = 10f; //Time till game starts
 
+    [SerializeField] protected Health health;
+    [SerializeField] protected bool isDead = false;
     [SerializeField] protected float timeQuestion = 10f; //Time between questions
     [SerializeField] protected float timeBetweenQuestion = 3f;
     [SerializeField] protected float animSpeed = 0.25f;
 
-    private void Awake()
+
+    protected void Awake()
     {
+        if (health == null)
+        {
+            gameObject.GetComponent<Health>();
+        }
         questionList = ShuffleQuestion(animalManager.animalList, questionAmount);
     }
 
@@ -135,6 +130,8 @@ public class GameController : MonoBehaviour
         displayText.DOText(textToDisplay, animSpeed);
     }
 
+
+
     protected virtual void CheckQuestion()
     {
         ClearVisuals();
@@ -148,9 +145,13 @@ public class GameController : MonoBehaviour
         {
             OnPlayerWrong?.Invoke();
             print("INCORRECT");
-            //Decrease health and check for game over
+            if (health.DecreaseHealth())
+            {
+                GameOver();
+                return;
+            }
         }
-
+        print("DID NOT RETURN IN CHECKQUESTION()");
         currentQuestion++;
 
         if (currentQuestion >= questionAmount)
@@ -163,6 +164,11 @@ public class GameController : MonoBehaviour
             OnQuestionChange?.Invoke();
             StartCoroutine(StartCountDown(timeBetweenQuestion, ShuffleAnswerAndDisplayQuestion));
         }
+    }
+
+    private void GameOver()
+    {
+        throw new NotImplementedException();
     }
 
     public virtual void OnPlayerEnterZone(string word)

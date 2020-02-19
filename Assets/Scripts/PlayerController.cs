@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D rb;
     private Vector2 moveDir;
     private Vector2 startPos;
     
@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
     [Header("States")]
     //[SerializeField] private bool isJumping = false;
     [SerializeField] private bool isFrozen = false;
-    [SerializeField] private bool isGrounded = false;
-    [SerializeField] private bool jumped = false;
+    public bool isGrounded = false;
+    public bool jumped = false;
     
     private void Awake()
     {
@@ -80,8 +80,4 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, rb.velocity.y);
     }
 
-    // private void OnTriggerEnter2D(Collider2D other)
-    // {
-    //     print(other.name);
-    // }
 }
