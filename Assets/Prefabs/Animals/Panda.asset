@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalSprite: {fileID: 21300000, guid: e465690be94d5de40aacc2d195e5f918, type: 3}
   correctWord: Panda
-  wrongWord: Pandemic
+  wrongWord: Pandoo
   description: 

@@ -42,7 +42,7 @@ public class AnswerZone : MonoBehaviour
     private void OnPlayerHit()
     {
         punchTween.Restart();
-        gameController.OnPlayerEnterZone(answerText.text);
+        gameController.OnPlayerEnterZone(answerText.text,this);
     }
 
     public void OnPlayerExit()

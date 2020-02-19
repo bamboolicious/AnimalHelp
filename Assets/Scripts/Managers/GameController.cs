@@ -16,13 +16,16 @@ public class GameController : MonoBehaviour
 
     public static event PlayerEvent OnGameStart,
         OnGameEnd,
+        OnGameOver,
         OnPlayerCorrect,
         OnPlayerWrong,
         OnPlayerAnswer,
         OnPlayerUnAnswer,
         OnQuestionChange;
 
+    [Header("References")]
     [SerializeField] protected AnimalManager animalManager;
+    [SerializeField] protected UIController uiController;
 
     [Space] [Header("Questions")] [SerializeField]
     protected int questionAmount = 10;
@@ -46,10 +49,12 @@ public class GameController : MonoBehaviour
     protected float timeStartGame = 10f; //Time till game starts
 
     [SerializeField] protected Health health;
-    [SerializeField] protected bool isDead = false;
+    [SerializeField] public static bool isDead = false;
     [SerializeField] protected float timeQuestion = 10f; //Time between questions
     [SerializeField] protected float timeBetweenQuestion = 3f;
     [SerializeField] protected float animSpeed = 0.25f;
+    [SerializeField] protected Color selectedColor;
+    [SerializeField] protected Sprite correctImage, incorrectImage;
 
 
     protected void Awake()
@@ -58,6 +63,7 @@ public class GameController : MonoBehaviour
         {
             gameObject.GetComponent<Health>();
         }
+        GameController.isDead = false;
         questionList = ShuffleQuestion(animalManager.animalList, questionAmount);
     }
 
@@ -111,6 +117,7 @@ public class GameController : MonoBehaviour
 
     protected virtual void ShuffleAnswerAndDisplayQuestion()
     {
+        ClearVisuals();
         animalSprite.sprite = questionList[currentQuestion].animalSprite; //Set sprite
         animalSprite.DOFade(1, animSpeed);
         animalSprite.rectTransform.DOShakeScale(animSpeed,animSpeed).SetEase(Ease.InOutQuint); //Animate sprite bounce
@@ -122,6 +129,7 @@ public class GameController : MonoBehaviour
         foreach (var zone in answerZones)
         {
             zone.answerText.text = "";
+            zone.answerText.color = Color.white;
         }
     }
 
@@ -138,49 +146,45 @@ public class GameController : MonoBehaviour
         ; //Clear the visual clutter so kids doesn't get confused
         if (AnsweredWord == correctWord)
         {
-            OnPlayerCorrect?.Invoke();
-            print("CORRECT");
+            animalSprite.sprite = correctImage;
+            animalSprite.rectTransform.DOShakeScale(animSpeed, animSpeed).SetEase(Ease.InOutQuint);
         }
         else
         {
-            OnPlayerWrong?.Invoke();
-            print("INCORRECT");
+            animalSprite.sprite = incorrectImage;
+            animalSprite.rectTransform.DOShakeScale(animSpeed, animSpeed).SetEase(Ease.InOutQuint);
             if (health.DecreaseHealth())
             {
-                GameOver();
+                isDead = true;
+                UIController.Instance.GameOver(); //GAME OVER
                 return;
             }
         }
-        print("DID NOT RETURN IN CHECKQUESTION()");
         currentQuestion++;
 
         if (currentQuestion >= questionAmount)
         {
-            OnGameEnd?.Invoke();
-            print("FINISHED");
+            //GAME FINISHED
         }
         else if (currentQuestion < questionAmount)
         {
-            OnQuestionChange?.Invoke();
             StartCoroutine(StartCountDown(timeBetweenQuestion, ShuffleAnswerAndDisplayQuestion));
         }
     }
 
-    private void GameOver()
-    {
-        throw new NotImplementedException();
-    }
-
-    public virtual void OnPlayerEnterZone(string word)
+    public virtual void OnPlayerEnterZone(string word,AnswerZone answerZone)
     {
         AnsweredWord = word;
-        OnPlayerAnswer?.Invoke();
+        foreach (var zone in answerZones) //Turn other answerZones text white
+        {
+            zone.answerText.color = Color.white;
+        }
+        answerZone.answerText.DOColor(selectedColor, animSpeed);
     }
 
     public virtual void OnPlayerExitZone()
     {
         AnsweredWord = "";
-        OnPlayerUnAnswer?.Invoke();
     }
 
 }

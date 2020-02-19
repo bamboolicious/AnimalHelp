@@ -283,20 +283,49 @@ namespace UnityEditor.Timeline
 
         public static IEnumerable<TrackAsset> SelectedTracks()
         {
-            ‹xdAPEØP‹‹p‹Îÿ„u‹ÏÿÖ‹Èèl8ÿÿƒMüÿMØènüÿ‹lÿÿÿè@úÿÿ‹ø‹‹q‹Îÿ„u‹ÏÿÖƒx †8  ‹lÿÿÿèúÿÿ‹ø‹‹q‹Îÿ„u‹ÏÿÖƒeĞ j‰…pÿÿÿX‰EÔÆEÀ ‹lÿÿÿ‰Eüèãùÿÿ‹ø‹‹q‹Îÿ„u‹ÏÿÖMÀ‹@Áà
-Pè‘ıÿ‹µpÿÿÿ…tÿÿÿP‹ÎÇ…tÿÿÿ   èÈ2şÿ‹>;Çtƒx~‹Ç;ø„ì   hd¬èı?
- YPhd¬MÀè—jüÿEØjPè¬ñüÿEØÆEüPEh8ÜPè¢_ıÿƒÄƒx‹ÈÆEür‹ÿpQMÀèYjüÿMèmüÿMØÆEüèõlüÿ¿`Wè‘?
- YPWMÀè/jüÿ¿dWè{?
- YPWMÀèjüÿ…tÿÿÿÇ…tÿÿÿ   P…dÿÿÿ‹ÎPèı÷ÿÿ‹…dÿÿÿƒx(Hr‹Hÿp$QMÀèÜiüÿ¿d¬Wè(?
- YPWMÀèÆiüÿ‹>…tÿÿÿÇ…tÿÿÿ   P‹Îè®1şÿ;Çtƒx~‹Ç;ø„  ƒ}Ğ thhèß>
- YPhhMÀèyiüÿ¿d¬WèÅ>
- YPWMÀèciüÿEØjPèxğüÿEØÆEüPEh8ÜPèn^ıÿƒÄƒx‹ÈÆEür‹ÿpQMÀè%iüÿMèÍküÿMØÆEüèÁküÿ¿`Wè]>
- YPWMÀèûhüÿ¿lWèG>
- YPWMÀèåhüÿ…tÿÿÿÇ…tÿÿÿ   P…dÿÿÿ‹ÎPèÉöÿÿ‹…dÿÿÿƒx(Hr‹Hÿp$QMÀè¨hüÿ¿d¬Wèô=
- YPWMÀè’hüÿë¿d¬…tÿÿÿÇ…tÿÿÿ   P‹Îèu0şÿ;tƒx~‹9„  ƒ}Ğ thhè¦=
- YPhhMÀè@hüÿWè‘=
- YPWMÀè/hüÿEØjPèDïüÿEØÆEüPEh8ÜPè:]ıÿƒÄƒx‹ÈÆEür‹ÿpQMÀèñgüÿMè™jüÿMØÆEüèjüÿ¿`Wè)=
- YPWMÀèÇgüÿ¿xWè=
- YPWMÀè±güÿ…tÿÿÿÇ…tÿÿÿ   P…dÿÿÿ‹ÎPè•õÿÿ‹…dÿÿÿƒx(Hr‹Hÿp$QMÀètgüÿ¾d¬VèÀ<
- YPVMÀè^güÿƒ}Ğ t>h|MØèĞgüÿ‹ÆEü‹xdEÀPEØP‹‹p‹Îÿ„u‹ÏÿÖ‹Èè4ÿÿMØèÊiüÿƒMüÿMÀè¾iüÿ‹lÿÿÿèàõÿÿ‹ø‹‹q‹Îÿ„u‹ÏÿÖ<uZhP¦MÀèdgüÿh„MØÇEü   èPgüÿ‹ÆEü‹xdEÀPEØP‹‹p‹Îÿ„u‹ÏÿÖ‹Èè”3ÿÿMØèJiüÿMÀèBiüÿƒe¸ ÇE¼   ÆE¨ ‹M¨ÇEü   ‹@8kÀKPèŒıÿ‹3‹v4‹‰…pÿÿÿë:ƒ}¸ xt
-j,M¨è,ÿüÿƒ‹Çr‹ÿwM¨Pè3füÿpÿÿÿèF üÿ‹…pÿÿ
+            return Selection.objects.OfType<TrackAsset>();
+        }
+
+        public static IEnumerable<T> SelectedItemOfType<T>()
+        {
+            if (typeof(T) == typeof(TimelineClip))
+                return SelectedClips().Cast<T>();
+            if (typeof(T).IsAssignableFrom(typeof(IMarker)))
+                return SelectedMarkers().Cast<T>();
+            return Enumerable.Empty<T>();
+        }
+
+        public static IEnumerable<TimelineTrackBaseGUI> SelectedTrackGUI()
+        {
+            var tracks = SelectedTracks();
+            return TimelineWindow.instance.allTracks.Where(x => tracks.Contains(x.track));
+        }
+
+        static bool IsTimelineType(Object o)
+        {
+            return o is TrackAsset || o is EditorClip || o is IMarker;
+        }
+
+        public static IEnumerable<ITimelineItem> SelectedItems()
+        {
+            var list = new List<ITimelineItem>();
+            foreach (var obj in Selection.objects)
+            {
+                var editorClip = obj as EditorClip;
+                if (editorClip != null)
+                {
+                    list.Add(new ClipItem(editorClip.clip));
+                    continue;
+                }
+
+                var marker = obj as IMarker;
+                if (marker != null)
+                {
+                    list.Add(new MarkerItem(marker));
+                }
+            }
+
+            return list;
+        }
+    }
+}

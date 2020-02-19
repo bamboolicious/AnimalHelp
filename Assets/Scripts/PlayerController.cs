@@ -20,19 +20,18 @@ public class PlayerController : MonoBehaviour
     
     [Space]
     [Header("States")]
-    //[SerializeField] private bool isJumping = false;
-    [SerializeField] private bool isFrozen = false;
     public bool isGrounded = false;
     public bool jumped = false;
     
-    private void Awake()
+
+    private void Start()
     {
         SetUp();
     }
 
     private void SetUp()
     {
-        GameController.OnQuestionChange += ResetPlayerPos;
+        //GameController.OnQuestionChange += ResetPlayerPos;
         startPos = transform.position;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -46,7 +45,7 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (isFrozen) return;
+        if (GameController.isDead) return;
         CheckGround();
         Walk(moveDir);
         Jump();

@@ -9,15 +9,15 @@ using UnityEngine.SceneManagement;
 public class TransitionManager : MonoBehaviour
 {
     public string sceneToLoad;
-
+    public static TransitionManager Instance;
     [SerializeField] private Image fadeImage;
-    private Transform imageTransfrom;
+    private Image imageTransfrom;
     private readonly int midScreen = Screen.width / 2;
     private AsyncOperation async;
 
     private void Awake()
     {
-        imageTransfrom = fadeImage.transform;
+        Instance = this;
     }
 
     private void Start()
@@ -27,19 +27,17 @@ public class TransitionManager : MonoBehaviour
 
     private void UnfadeScene()
     {
-        imageTransfrom.DOMoveX(midScreen * 3.5f, 1f).SetEase(Ease.OutQuint).OnComplete(ResetFadeImage);
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.DOFade(0,1f);
     }
 
-    private void ResetFadeImage()
-    {
-        imageTransfrom.position = new Vector2(midScreen * -3.5f,imageTransfrom.position.y);
-    }
 
     public void StartLoadScene(string scene)
     {
         async = SceneManager.LoadSceneAsync(scene);
         async.allowSceneActivation = false;
-        imageTransfrom.DOMoveX(midScreen, 1f).SetEase(Ease.OutQuint).OnComplete(AllowLoadScene);
+        fadeImage.DOFade(1, 0.25f).OnComplete(AllowLoadScene).SetUpdate(true);
+        fadeImage.gameObject.SetActive(false);
     }
 
     public void AllowLoadScene()

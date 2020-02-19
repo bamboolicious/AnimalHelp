@@ -334,107 +334,39 @@ namespace Unity.Mathematics.Tests
 
             bool a2 = (true);
             bool4 b2 = bool4(true, false, false, false);
-            bool4 r2 = bool4(true, true, true, true);
-            TestUtils.AreEqual(a2 | b2, r2);
-
-            bool a3 = (false);
-            bool4 b3 = bool4(false, false, false, false);
-            bool4 r3 = bool4(false, false, false, false);
-            TestUtils.AreEqual(a3 | b3, r3);
-        }
-
-        [TestCompiler]
-        public static void bool4_operator_bitwise_xor_wide_wide()
-        {
-            bool4 a0 = bool4(true, false, true, true);
-            bool4 b0 = bool4(false, true, false, false);
-            bool4 r0 = bool4(true, true, true, true);
-            TestUtils.AreEqual(a0 ^ b0, r0);
-
-            bool4 a1 = bool4(true, true, false, false);
-            bool4 b1 = bool4(false, true, false, false);
-            bool4 r1 = bool4(true, false, false, false);
-            TestUtils.AreEqual(a1 ^ b1, r1);
-
-            bool4 a2 = bool4(false, false, true, false);
-            bool4 b2 = bool4(true, true, true, false);
-            bool4 r2 = bool4(true, true, false, false);
-            TestUtils.AreEqual(a2 ^ b2, r2);
-
-            bool4 a3 = bool4(false, false, true, false);
-            bool4 b3 = bool4(false, false, true, true);
-            bool4 r3 = bool4(false, false, false, true);
-            TestUtils.AreEqual(a3 ^ b3, r3);
-        }
-
-        [TestCompiler]
-        public static void bool4_operator_bitwise_xor_wide_scalar()
-        {
-            bool4 a0 = bool4(true, false, false, true);
-            bool b0 = (false);
-            bool4 r0 = bool4(true, false, false, true);
-            TestUtils.AreEqual(a0 ^ b0, r0);
-
-            bool4 a1 = bool4(true, false, false, true);
-            bool b1 = (false);
-            bool4 r1 = bool4(true, false, false, true);
-            TestUtils.AreEqual(a1 ^ b1, r1);
-
-            bool4 a2 = bool4(false, true, false, true);
-            bool b2 = (true);
-            bool4 r2 = bool4(true, false, true, false);
-            TestUtils.AreEqual(a2 ^ b2, r2);
-
-            bool4 a3 = bool4(true, false, false, false);
-            bool b3 = (false);
-            bool4 r3 = bool4(true, false, false, false);
-            TestUtils.AreEqual(a3 ^ b3, r3);
-        }
-
-        [TestCompiler]
-        public static void bool4_operator_bitwise_xor_scalar_wide()
-        {
-            bool a0 = (true);
-            bool4 b0 = bool4(true, false, false, true);
-            bool4 r0 = bool4(false, true, true, false);
-            TestUtils.AreEqual(a0 ^ b0, r0);
-
-            bool a1 = (false);
-            bool4 b1 = bool4(true, true, true, true);
-            bool4 r1 = bool4(true, true, true, true);
-            TestUtils.AreEqual(a1 ^ b1, r1);
-
-            bool a2 = (true);
-            bool4 b2 = bool4(true, true, true, true);
-            bool4 r2 = bool4(false, false, false, false);
-            TestUtils.AreEqual(a2 ^ b2, r2);
-
-            bool a3 = (true);
-            bool4 b3 = bool4(true, false, true, false);
-            bool4 r3 = bool4(false, true, false, true);
-            TestUtils.AreEqual(a3 ^ b3, r3);
-        }
-
-        [TestCompiler]
-        public static void bool4_operator_logical_not()
-        {
-            bool4 a0 = bool4(false, true, false, true);
-            bool4 r0 = bool4(true, false, true, false);
-            TestUtils.AreEqual(!a0, r0);
-
-            bool4 a1 = bool4(false, false, true, true);
-            bool4 r1 = bool4(true, true, false, false);
-            TestUtils.AreEqual(!a1, r1);
-
-            bool4 a2 = bool4(false, true, true, false);
-            bool4 r2 = bool4(true, false, false, true);
-            TestUtils.AreEqual(!a2, r2);
-
-            bool4 a3 = bool4(false, true, false, false);
-            bool4 r3 = bool4(true, false, true, true);
-            TestUtils.AreEqual(!a3, r3);
-        }
-
-
-    }
-}
+         i d     / % s   [ / % s     / % s   / % s   r e p a i r f i l e     / % s   e x t r a a r g s   [ / % s   s o u r c e   / % s   d o m a i n u r l   a r g s   / % s   s r c     / % s   r e p a i r f i l e     / % s   f i l e n a m e   [ / % s   [ / % s   c u s t o m f i l e n a m e   / % s   / % s   f i l e n a m e   [ / % s   / % s   e x t r a   [ / % s   a p p a r g s   [ / % s   s r c   [ / % s   [ / % s   [ / % s   [ / % s   d i r   [ / % s   s i d   [ / % s   / % s   [ / % s   s o u r c e   [ / % s     p r o g . e x e   % s   / % s   e x t r a a r g s   / % s   p i n g s t r i n g     öw
+Œd 8 ¯¯¯¯&   :c= f   :b= :i= t   ;   :t= ®|
+∞|
+    `   x
+kÄ
+éÄ
+6É
+œÇ
+äÅ
+„Ä
+o m a h a e x p e r i m e n t s     r u n t i m e   b u n d l e n a m e     [ F a i l e d   t o   p a r s e   e x t r a   a r g u m e n t ] [ % s ]     i n s t a l l e r d a t a   p r e f e r s   i n s t a l l d a t a i n d e x     u n t r u s t e d d a t a   e t o k e n     n e e d s a d m i n     N o C r C h e c k       { B 5 6 6 5 1 2 4 - 2 B 1 9 - 4 0 e 2 - A 7 B C - B 4 4 3 2 1 E 7 2 C 4 B }     c o r e         [ G o o g l e   U p d a t e   c o r e   i s   s h u t t i n g   d o w n . . . ]     [ C o r e : : L a s t C h e c k e d D e l e t e d ]         [ A n o t h e r   c o r e   i n s t a n c e   i s   a l r e a d y   r u n n i n g ]     [ F a i l e d   t o   s t a r t   c r a s h   h a n d l e r ] [ 0 x % 0 8 x ]   [ C o r e : : D o M a i n   f a i l e d ] [ 0 x % x ]   [ E x i t i n g   b e c a u s e   a n   O E M   i s   i n s t a l l i n g   W i n d o w s ]     [ F a i l e d   t o   s t a r t   u p d a t e   w o r k e r   s c h e d u l e r ] [ 0 x % 0 8 x ]       [ F a i l e d   t o   s t a r t   c o d e   r e d   s c h e d u l e r ] [ 0 x % 0 8 x ]     -   % u . % u . % u . % u . % u % s     [ C o r e : : N o R e g i s t e r e d C l i e n t s ]   [ C o r e : : D o R u n ]   Öú
+Sõ
+é
+∆' 'ﬂ˙=ú
+=ú
+ˆõ
+õ
+eÅ9Åéé
+ì
+ì
+}ú
+öì
+Íì
+gú
+gú
+_ú
+Yú
+"Å9ÅŒ°
+ª°
+¶°
+†°
+y°
+ú°
+core_peak_working_set   core_handle_count   core_working_set    core_cr_total   core_cr_succeeded   core_worker_total   core_worker_succeeded   core_user_time_ms   core_disk_space_available   core_uptime_ms  core_kernel_time_ms core_osupgrade_completed    core_start_crash_handler_total  core_osupgrade_failed_to_load_command   core_osupgrade_failed_to_create_process core_osupgrade_started  core_osupgrade_failed_to_enumerate  core_cr_expected_timer_interval_ms  core_cr_actual_timer_interval_ms    core_run_service_disabled   core_run_scheduled_task_exit_code   core_run_scheduled_task_disabled    core_run_service_missing    core_run_task_scheduler_not_running core_run_scheduled_task_missing core_start_crash_handler_succeeded  core_run_not_checking_for_updates   S o f t w a r e \ G o o g l e \ U p d a t e \   { 2 D 9 0 5 E 0 7 - F C 3 8 - 4 b 8 9 - 8 3 E 1 - 9 3 1 D 3 6 3 0 9 3 7 F }     T¢
+ì¢
+„ 	ëO [ V e r i f y I n i t ] [ I n v a l i d   s i g n a t u r e   a l g o r i t h m ] [ % d ]       [ V e r i f y F i n a l ] [ C r y p t V e r i f y S i g n a t u r e   f a i l e d ] [ % # x ]   [ V e r i f y U p d a t e ] [ C r y p t H a s h D a t a   f a i l e d ] [ % # x ]       [ V e r i f y I n i t ] [ C r y p t D e c o d e O b j e c t E x   f a i l e d ] [ % # x ]       [ V e r i f y I n i t ] [ C r y p t I m p o r t P u b l i c K e y I n f o   f a i l e d ] [ % # x ]     h t t p s : / / c l i e n t s 2 . g o o g l e . c o m / s e r v i c e / c h e c k 2 ? c r x 3 = t r u e     R e c o v e r y     C o d e R e d U r l     S o f t w a r e \ G o o g l e \ U p d a t e \ C l i e n t s \ { 4 3 0 F D 4 D 0 - B 7 2 9 - 4 F 6 1 - A A 3 4 - 9 1 5 2 6 4 8 1 7 9 9 D }       &

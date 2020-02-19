@@ -7,15 +7,11 @@ using UnityEngine.UI;
 
 public class AestheticController : MonoBehaviour
 {
-    [Header("References")] [SerializeField]
-    private TextMeshProUGUI statusText;
+    [Header("References")]
 
     [SerializeField] private GameController gameController;
-    [SerializeField] private TextMeshProUGUI answerText;
     [SerializeField] private Image animalImage;
     [SerializeField] private Sprite correctImage, incorrectImage;
-
-    private Tweener myTween;
 
     [Space] [Header("Animation Values")] [SerializeField]
     private float animMultiplier = 2f;
@@ -26,59 +22,51 @@ public class AestheticController : MonoBehaviour
     private void Awake()
     {
         DOTween.Init();
-        SetUpTween();
-        if (gameController == null)
-        {
-            gameController = FindObjectOfType<GameController>();
-        }
-        animalImage = gameController.animalSprite;
-    }
 
+    }
     // Start is called before the first frame update
     private void Start()
     {
-        print(DOTween.defaultAutoPlay);
+        if (gameController == null)
+        {
+            gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        }
+        print(gameController);
+        animalImage = gameController.animalSprite;
+
         GameController.OnPlayerAnswer += PlayerAnswer;
         GameController.OnPlayerUnAnswer += PlayerUnAnswer;
         GameController.OnPlayerCorrect += PlayerCorrect;
         GameController.OnPlayerWrong += PlayerWrong;
         GameController.OnGameEnd += OnGameEnd;
-    }
-
-    private void SetUpTween()
-    {
-        myTween = animalImage.rectTransform.DOShakeScale(animDuration, animDuration).SetEase(Ease.InOutQuint).Pause().SetAutoKill(false);
+        
     }
     private void PlayerAnswer()
     {
         if (GameController.AnsweredWord != null)
         {
-            answerText.text = "Answer : " + GameController.AnsweredWord;
+           // answerText.text = "Answer : " + GameController.AnsweredWord;
         }
     }
 
     private void OnGameEnd()
     {
-        statusText.text = "GAME FINISHED";
+        //statusText.text = "GAME FINISHED";
     }
 
     private void PlayerUnAnswer()
     {
-        answerText.text = "Unanswered";
+        //answerText.text = "Unanswered";
     }
 
     private void PlayerCorrect()
     {
-        animalImage.sprite = correctImage;
-        myTween.Restart();
-        statusText.text = "CORRECT";
+
     }
 
     private void PlayerWrong()
     {
-        animalImage.sprite = incorrectImage;
-        myTween.Restart();
-        statusText.text = "INCORRECT";
+
     }
 
 }
