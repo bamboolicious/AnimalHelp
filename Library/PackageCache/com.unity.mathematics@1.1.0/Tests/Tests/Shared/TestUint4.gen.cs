@@ -1140,4 +1140,214 @@ namespace Unity.Mathematics.Tests
 
             uint4 a3 = uint4(700973621, 370621508, 2087573076, 351476570);
             uint4 b3 = uint4(1040688781, 1020757245, 1143954843, 1281933464);
-            uint4 r3 = uinacementChange put_AllowNavMenuPlacementChange get_PlaceNavigationMenuOnRight put_PlaceNavigationMenuOnRight get_ForceRetailExperience put_ForceRetailExperience get_ForceRegularExperience put_ForceRegularExperience get_WhatsNewPhoneMusicReleaseName put_WhatsNewPhoneMusicReleaseName get_WhatsNewVideoReleaseName put_WhatsNewVideoReleaseName get_WhatsNewShownForWin10Release put_WhatsNewShownForWin10Release get_WhatsNewNonLaunchCountData put_WhatsNewNonLaunchCountData get_SuppressWhatsNewShownForWin10Release put_SuppressWhatsNewShownForWin10Release get_WhatsNewStringIdsForMusic put_WhatsNewStringIdsForMusic get_WhatsNewStringIdsForPhoneMusic put_WhatsNewStringIdsForPhoneMusic get_WhatsNewStringIdsForVideo put_WhatsNewStringIdsForVideo get_LastUsedAppNavigationMonikerData put_LastUsedAppNavigationMonikerData get_UseStickyPivots put_UseStickyPivots get_LiveTileMinimumExpirationTime put_LiveTileMinimumExpirationTime get_HideSoftwareBackButton put_HideSoftwareBackButton get_EnableRateAndReviewPromptMusic put_EnableRateAndReviewPromptMusic get_EnableRateAndReviewPromptVideo put_EnableRateAndReviewPromptVideo get_RateAndReviewRulesVideo put_RateAndReviewRulesVideo get_RateAndReviewRulesMusic put_RateAndReviewRulesMusic get_RateAndReviewLastUsedRuleset put_RateAndReviewLastUsedRuleset get_RateAndReviewDesktopMusicPromptVersion put_RateAndReviewDesktopMusicPromptVersion get_RateAndReviewDesktopMusicLaunchThreshold put_RateAndReviewDesktopMusicLaunchThreshold get_RateAndReviewDesktopMusicTrackThreshold put_RateAndReviewDesktopMusicTrackThreshold get_RateAndReviewCurrentPromptVersion put_RateAndReviewCurrentPromptVersion get_RateAndReviewDaysLaunchedForMusic put_RateAndReviewDaysLaunchedForMusic get_RateAndReviewLastLaunchDay put_RateAndReviewLastLaunchDay get_RateAndReviewPromptShown put_RateAndReviewPromptShown get_NavPaneWasCollapsed put_NavPaneWasCollapsed get_ThemePreference put_ThemePreference get_LastKnownWindowWidth put_LastKnownWindowWidth get_LastKnownWindowHeight put_LastKnownWindowHeight get_CollectionBuildingTimeoutMS put_CollectionBuildingTimeoutMS get_WasInMiniMode put_WasInMiniMode get_NetworkQualityRules put_NetworkQualityRules get_DataCategoryMap put_DataCategoryMap get_UnsupportedRegionSignInFixTelemetryId put_UnsupportedRegionSignInFixTelemetryId get_FireBackgroundAndMemoryLimitEvents put_FireBackgroundAndMemoryLimitEvents get_ExperimentationTreatmentIds put_ExperimentationTreatmentIds get_EnableBackstackTrimmingForAllNavigations put_EnableBackstackTrimmingForAllNavigations get_BackstackViewModelsToKeepWhenTrimming put_BackstackViewModelsToKeepWhenTrimming get_EnableLiveMemoryReporting put_EnableLiveMemoryReporting get_ShowMemoryInformationOnStartup put_ShowMemoryInformationOnStartup get_MSATOUUpdateDetailsLink put_MSATOUUpdateDetailsLink get_MSATOUUpdateNotificationStartDate put_MSATOUUpdateNotificationStartDate get_MSATOUUpdateEffectiveDate put_MSATOUUpdateEffectiveDate get_MSATOUUpdateNotificationEndDate put_MSATOUUpdateNotificationEndDate get_MSATOUDisplayIntervalBeforeEffectiveDate put_MSATOUDisplayIntervalBeforeEffectiveDate get_LastSeenMSATOUUpdateEffectiveDate put_LastSeenMSATOUUpdateEffectiveDate get_MSATOUNotificationLastShownDate put_MSATOUNotificationLastShownDate get_MSATOUPreUpdateNotificationDismissed put_MSATOUPreUpdateNotificationDismissed get_MSATOUPostUpdateNotificationDismissed put_MSATOUPostUpdateNotificationDismissed AllowNavMenuPlacementChange BackstackViewModelsToKeepWhenTrimming CollectionBuildingTimeoutMS DataCategoryMap EnableBackstackTrimmingForAllNavigations EnableLiveMemoryReporting EnableRateAndReviewPromptMusic EnableRateAndReviewPromptVideo EnableSwipeToOpen ExperimentationTreatmentIds FireBackgroundAndMemoryLimitEvents ForceRegularExperience ForceRetailExperience HideSoftwareBackButton LastKnownWindowHeight LastKnownWindowWidth LastSeenMSATOUUpdateEffectiveDate LastUsedAppNavigationMonikerData LiveTileMinimumExpirationTime MSATOUDisplayIntervalBeforeEffectiveDate MSATOUNotificationLastShownDate MSATOUPostUpdateNotificationDismissed MSATOUPreUpdateNotificationDismissed MSATOUUpdateDetailsLink MSATOUUpdateEffectiveDate MSATOUUpdateNotificationEndDate MSATOUUpdateNotificationStartDate NavPaneWasCollapsed NetworkQualityRules PlaceNavigationMenuOnRight RateAndReviewCurrentPromptVersion RateAndReviewDaysLaunchedForMusic RateAndReviewDesktopMusicLaunchThreshold RateAndReviewDesktopMusicPromptVersion RateAndReviewDesktopMusicTrackThreshold RateAndReviewLastLaunchDay RateAndReviewLastUsedRuleset RateAndReviewPromptShown RateAndReviewRulesMusic RateAndReviewRulesVideo ShowMemoryInformationOnStartup SuppressWhatsNewShownForWin10Release ThemePreference UnsupportedRegionSignInFixTelemetryId UseStickyPivots WasInMiniMode WhatsNewNonLaunchCountData WhatsNewPhoneMusicReleaseName WhatsNewShownForWin10Release WhatsNewStringIdsForMusic WhatsNewStringIdsForPhoneMusic WhatsNewStringIdsForVideo WhatsNewVideoReleaseName get_IsMusicEnabled put_IsMusicEnabled get_IsVideoEnabled put_IsVideoEnabled get_IsMusicDownloadEnabled put_IsMusicDownloadEnabled get_IsVideoDownloadEnabled put_IsVideoDownloadEnabled get_IsVideoRentalDownloadEnabled put_IsVideoRentalDownloadEnabled get_DownloadRentalHistoryExpirationDays put_DownloadRentalHistoryExpirationDays get_VideoAppBigId put_VideoAppBigId get_MusicAppBigId put_MusicAppBigId get_IsDeeplinkToMusicProductionApp put_IsDeeplinkToMusicProductionApp get_IsDeeplinkToVideoProductionApp put_IsDeeplinkToVideoProductionApp get_IsMusicPassUpsellEnabled put_IsMusicPassUpsellEnabled get_MusicPassProductBigId put_MusicPassProductBigId get_MusicPassProductEDSId put_MusicPassProductEDSId get_MusicPassState put_MusicPassState get_ExplicitContentMarketToAgeMappings put_ExplicitContentMarketToAgeMappings get_IsProgrammableMusicHomepageEnabled put_IsProgrammableMusicHomepageEnabled get_IsProgrammableVideoHomepageEnabled put_IsProgrammableVideoHomepageEnabled get_UsePreviewProgrammableMusicHomepage put_UsePreviewProgrammableMusicHomepage get_UsePreviewProgrammableVideoHomepage put_UsePreviewProgrammableVideoHomepage get_ShowMusicPassFeatureChart put_ShowMusicPassFeatureChart get_IsVideoUWAAvailableOnXbox put_IsVideoUWAAvailableOnXbox get_UHDMinSupportedOsVersion put_UHDMinSupportedOsVersion DownloadRentalHistoryExpirationDays ExplicitContentMarketToAgeMappings IsDeeplinkToMusicProductionApp IsDeeplinkToVideoProductionApp IsMusicDownloadEnabled IsMusicEnabled IsMusicPassUpsellEnabled IsProgrammableMusicHomepageEnabled IsProgrammableVideoHomepageEnabled IsVideoDownloadEnabled IsVideoEnabled IsVideoRentalDownloadEnabled IsVideoUWAAvailableOnXbox MusicAppBigId MusicPassProductBigId MusicPassProductEDSId MusicPassState ShowMusicPassFeatureChart UHDMinSupportedOsVersion UsePreviewProgrammableMusicHomepage UsePreviewProgrammableVideoHomepage VideoAppBigId get_IsFirstTimeSync put_IsFirstTimeSync get_CloudCollectionV2DeduplicationStrategy put_CloudCollectionV2DeduplicationStrategy get_CloudCollectionV2DeduplicationStrategyUI put_CloudCollectionV2DeduplicationStrategyUI CloudCollectionV2DeduplicationStrategy CloudCollectionV2DeduplicationStrategyUI IsFirstTimeSync get_Enabled put_Enabled Enabled get_RandomSamplingRate_ProtectedStreamingVideo_ByDeviceFamily put_RandomSamplingRate_ProtectedStreamingVideo_ByDeviceFamily get_PersonalGalleryFirstRunBannerDismissed put_PersonalGalleryFirstRunBannerDismissed get_MovieGalleryFirstRunBannerDismissed put_MovieGalleryFirstRunBannerDismissed get_TVGalleryFirstRunBannerDismissed put_TVGalleryFirstRunBannerDismissed get_ThPostRollEnabled put_ThPostRollEnabled get_PostRollCreditsGapInSeconds put_PostRollCreditsGapInSeconds get_VideoCloudCollectionEnabled put_VideoCloudCollectionEnabled get_PreviousVideoCloudCollectionEnabledValue put_PreviousVideoCloudCollectionEnabledValue get_MasterVideoCloudCollectionOverrideEnabled put_MasterVideoCloudCollectionOverrideEnabled get_MinimumSecondsBetweenSyncs put_MinimumSecondsBetweenSyncs get_FindByIdBackoffPeriodSecs put_FindByIdBackoffPeriodSecs get_DownloadsEnabled put_DownloadsEnabled get_OfflineHelpUrl put_OfflineHelpUrl get_InAppPurchaseEnabled_ByDeviceFamily put_InAppPurchaseEnabled_ByDeviceFamily get_HaveMigratedFromXboxVideo put_HaveMigratedFromXboxVideo get_UseFamilySafetyService put_UseFamilySafetyService get_DefaultFullScreenPlayback put_DefaultFullScreenPlayback get_FullScreenPlaybackToggleExperimentActivated put_FullScreenPlaybackToggleExperimentActivated get_UserInteractedWithFullScreenPlaybackToggle put_UserInteractedWithFullScreenPlaybackToggle DefaultFullScreenPlayback DownloadsEnabled FindByIdBackoffPeriodSecs FullScreenPlaybackToggleExperimentActivated HaveMigratedFromXboxVideo InAppPurchaseEnabled_ByDeviceFamily MasterVideoCloudCollectionOverrideEnabled MinimumSecondsBetweenSyncs MovieGalleryFirstRunBannerDismissed OfflineHelpUrl PersonalGalleryFirstRunBannerDismissed PostRollCreditsGapInSeconds PreviousVideoCloudCollectionEnabledValue RandomSamplingRate_ProtectedStreamingVideo_ByDeviceFamily TVGalleryFirstRunBannerDismissed ThPostRollEnabled UseFamilySafetyService UserInteractedWithFullScreenPlaybackToggle VideoCloudCollectionEnabled get_FilePath phstrFilePath get_ErrorCode phrErrorCode ErrorCode FilePath IsEnabled enabled feature CheckForNewFeatures add_FeaturesChangedEvent eventToken eventHandler remove_FeaturesChangedEvent FeaturesChangedEvent FeatureStart MusicFreePlayAnonymous MusicFreePlayAnonAds VideoFreeWithAds MusicAudioAdsEnabled CloudCollectionInterface FeatureCount get_OldFeatures oldFeatures get_NewFeatures newFeatures NewFeatures OldFeatures get_TaskId taskId get_TaskStatus get_TaskType get_ResponseCode get_BytesReceived get_TotalBytesToReceive get_Percentage get_TimeRemaining get_LibraryTypeId get_LibraryId get_AlbumLibraryId get_AlbumArtistLibraryId get_AlbumMediaId get_AlbumArtistMediaId get_SeasonLibraryId get_SeriesLibraryId get_SeriesMediaId get_CanRetry get_IsClosed get_IsBackground get_ContextLibraryId get_ContextLibraryTypeId Restart Pause Resume Cancel UpdateDownloadConnectionType downloadConnectionType AlbumArtistLibraryId AlbumArtistMediaId AlbumLibraryId AlbumMediaId BytesReceived CanRetry ContextLibraryId ContextLibraryTypeId IsBackground IsClosed LibraryId LibraryTypeId Percentage ResponseCode SeasonLibraryId SeriesLibraryId SeriesMediaId TaskId TaskStatus TaskType TimeRemaining TotalBytesToReceive GetFileDownloadByIdAsync GetFileDownloadsByQueryAsync query CancelAllDownloadsAsync UpdateAllDownloadsConnectionTypeAsync GetDownloadStateByCatalogId pStatus pfIsLocalPurchase ScheduleProgressCheck put_TaskId get_RequestType put_RequestType put_LibraryTypeId put_LibraryId put_AlbumLibraryId put_AlbumArtistLibraryId put_MediaId put_AlbumMediaId put_AlbumArtistMediaId put_SeasonLibraryId put_SeriesLibraryId put_SeasonNumber put_SeriesMediaId RequestType MarketPlace GenericFile NotStarted Running Paused PausedCostedNetwork Completed Canceled Pending add_LeaseRenewalFailed remove_LeaseRenewalFailed StopAllLeaseRenewalsAsync StopLeaseRenewalAsync keyId LeaseRenewalFailed get_AddedRights get_HasFailures AddedRights HasFailures BlockIngestAsync FullIngestAsync fRestoreDeletedPurchases IngestAsync ingestOnlyProductIds get_IsIngestBlocked ResetIngestionState IsIngestBlocked get_Result result get_KeyId KeyId RefreshLicenses hstrRefreshReason RemoveLicenses HasAllLicensesInDRMStore pfHasAllLicense Windows.Graphics.Effects IGraphicsEffect IGraphicsEffectSource get_Mode put_Mode get_Background source put_Background get_Foreground put_Foreground name put_Name Mode Multiply Screen Darken Lighten Dissolve ColorBurn LinearBurn DarkerColor LighterColor ColorDodge LinearDodge Overlay SoftLight HardLight VividLight LinearLight PinLight HardMix Difference Exclusion Hue Saturation Color Luminosity Subtract Division Windows.UI get_Color put_Color get_Destination put_Destination get_Source put_Source Source Destination SourceOver DestinationOver SourceIn DestinationIn SourceOut DestinationOut SourceAtop DestinationAtop Xor Copy BoundedCopy MaskInvert Soft Hard Speed Balanced Quality get_BlurAmount put_BlurAmount get_Optimization put_Optimization get_BorderMode put_BorderMode Optimization BorderMode BlurAmount get_Saturation put_Saturation X Y Z W GetCollectionServiceMediaIds collectionSmids GetCollectionImageUrls collectionImageUrls Initialize callback RetrieveImageAsync pImageOptions GenerateArtUrl phstrArtUrl Windows.Storage IStorageFile CopyFileToImageStoreAsync file DropAllImageFiles DeleteCachedImageFileForLocalFile hstrFilePath expirationDateTime GetDominantColorFromFileAsync ppOperation SetDetails sourceFilter resizeMode purpose target blurRadius SetHints netUsage resolutionFallback cacheType cacheUsage SetPosition position SetScaleFactor scaleFactor SetSelectionSize selectionWidth selectionHeight SetVersion version CreateForMedia ppImageOptions imageNamespace serviceMediaId width height hstrDefaultUrl CreateForProduct productIdImageNamespace CreateForBaseUrl baseImageUrl get_ScaleFactor pScaleFactor put_Scale
+            uint4 r3 = uint4(399484088, 717273273, 943885263, 1486609346);
+            TestUtils.AreEqual(a3 ^ b3, r3);
+        }
+
+        [TestCompiler]
+        public static void uint4_operator_bitwise_xor_wide_scalar()
+        {
+            uint4 a0 = uint4(2124666952, 177397845, 574879617, 1937385541);
+            uint b0 = (493665894);
+            uint4 r0 = uint4(1674536494, 402546227, 1060063719, 1846973987);
+            TestUtils.AreEqual(a0 ^ b0, r0);
+
+            uint4 a1 = uint4(1136545648, 535061373, 289301586, 1305234431);
+            uint b1 = (213863690);
+            uint4 r1 = uint4(1325466234, 324742775, 495003992, 1098057461);
+            TestUtils.AreEqual(a1 ^ b1, r1);
+
+            uint4 a2 = uint4(353786540, 1267729267, 125659640, 1315625690);
+            uint b2 = (1308626970);
+            uint4 r2 = uint4(1528187574, 93328233, 1232959970, 6998720);
+            TestUtils.AreEqual(a2 ^ b2, r2);
+
+            uint4 a3 = uint4(1730088797, 375757978, 491079274, 191750702);
+            uint b3 = (116862046);
+            uint4 r3 = uint4(1642603267, 278048964, 464677428, 228249200);
+            TestUtils.AreEqual(a3 ^ b3, r3);
+        }
+
+        [TestCompiler]
+        public static void uint4_operator_bitwise_xor_scalar_wide()
+        {
+            uint a0 = (1288453276);
+            uint4 b0 = uint4(1077599928, 884741329, 212164516, 1585020328);
+            uint4 r0 = uint4(217506340, 2020616269, 1080648504, 313868596);
+            TestUtils.AreEqual(a0 ^ b0, r0);
+
+            uint a1 = (152985454);
+            uint4 b1 = uint4(1775851275, 1416249064, 1309317737, 1773918217);
+            uint4 r1 = uint4(1623656549, 1567908230, 1192543495, 1621460839);
+            TestUtils.AreEqual(a1 ^ b1, r1);
+
+            uint a2 = (1509843030);
+            uint4 b2 = uint4(1206045972, 1154916424, 1947871003, 1774252400);
+            uint4 r2 = uint4(505195842, 489209886, 769935181, 809406758);
+            TestUtils.AreEqual(a2 ^ b2, r2);
+
+            uint a3 = (1946113778);
+            uint4 b3 = uint4(1079717492, 290620937, 1382343363, 939045099);
+            uint4 r3 = uint4(866416774, 1655558395, 563852337, 1141368345);
+            TestUtils.AreEqual(a3 ^ b3, r3);
+        }
+
+        [TestCompiler]
+        public static void uint4_operator_left_shift()
+        {
+            uint4 a0 = uint4(197771193, 622182602, 1283988958, 1327917304);
+            int b0 = (1321149625);
+            uint4 r0 = uint4(1912602624, 2483027968, 3154116608, 4026531840);
+            TestUtils.AreEqual(a0 << b0, r0);
+
+            uint4 a1 = uint4(473415985, 870301196, 2058433484, 1200694230);
+            int b1 = (432425717);
+            uint4 r1 = uint4(639631360, 3246391296, 2038431744, 2059403264);
+            TestUtils.AreEqual(a1 << b1, r1);
+
+            uint4 a2 = uint4(1531607705, 1008296534, 1447702302, 1079614371);
+            int b2 = (1360008038);
+            uint4 r2 = uint4(3533612608, 106468736, 2458634112, 375843008);
+            TestUtils.AreEqual(a2 << b2, r2);
+
+            uint4 a3 = uint4(35667343, 2045594989, 2077023268, 592678686);
+            int b3 = (1664454606);
+            uint4 r3 = uint4(258195456, 1398489088, 923336704, 3821502464);
+            TestUtils.AreEqual(a3 << b3, r3);
+        }
+
+        [TestCompiler]
+        public static void uint4_operator_right_shift()
+        {
+            uint4 a0 = uint4(548167301, 1161338299, 1617625829, 1860731847);
+            int b0 = (1266801540);
+            uint4 r0 = uint4(34260456, 72583643, 101101614, 116295740);
+            TestUtils.AreEqual(a0 >> b0, r0);
+
+            uint4 a1 = uint4(713958715, 770466193, 1265099998, 572763124);
+            int b1 = (196552656);
+            uint4 r1 = uint4(10894, 11756, 19303, 8739);
+            TestUtils.AreEqual(a1 >> b1, r1);
+
+            uint4 a2 = uint4(506619530, 2031319045, 701927980, 917785020);
+            int b2 = (426807581);
+            uint4 r2 = uint4(0, 3, 1, 1);
+            TestUtils.AreEqual(a2 >> b2, r2);
+
+            uint4 a3 = uint4(569504877, 1102123711, 334005460, 1624751550);
+            int b3 = (185593382);
+            uint4 r3 = uint4(8898513, 17220682, 5218835, 25386742);
+            TestUtils.AreEqual(a3 >> b3, r3);
+        }
+
+        [TestCompiler]
+        public static void uint4_operator_bitwise_not()
+        {
+            uint4 a0 = uint4(1403358969, 831360921, 2088190243, 976721016);
+            uint4 r0 = uint4(2891608326, 3463606374, 2206777052, 3318246279);
+            TestUtils.AreEqual(~a0, r0);
+
+            uint4 a1 = uint4(878283189, 1935567517, 1420884856, 472965491);
+            uint4 r1 = uint4(3416684106, 2359399778, 2874082439, 3822001804);
+            TestUtils.AreEqual(~a1, r1);
+
+            uint4 a2 = uint4(771711426, 2061524024, 753208488, 2097179283);
+            uint4 r2 = uint4(3523255869, 2233443271, 3541758807, 2197788012);
+            TestUtils.AreEqual(~a2, r2);
+
+            uint4 a3 = uint4(1303022493, 1289372466, 1635981125, 1951018596);
+            uint4 r3 = uint4(2991944802, 3005594829, 2658986170, 2343948699);
+            TestUtils.AreEqual(~a3, r3);
+        }
+
+        [TestCompiler]
+        public static void uint4_shuffle_result_1()
+        {
+            uint4 a = uint4(0, 1, 2, 3);
+            uint4 b = uint4(4, 5, 6, 7);
+
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftX), (0));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftY), (1));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftZ), (2));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftW), (3));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightX), (4));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY), (5));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ), (6));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightW), (7));
+        }
+
+        [TestCompiler]
+        public static void uint4_shuffle_result_2()
+        {
+            uint4 a = uint4(0, 1, 2, 3);
+            uint4 b = uint4(4, 5, 6, 7);
+
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY, ShuffleComponent.RightZ), uint2(5, 6));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.RightX), uint2(6, 4));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftY, ShuffleComponent.RightX), uint2(1, 4));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightW, ShuffleComponent.LeftW), uint2(7, 3));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightW, ShuffleComponent.LeftZ), uint2(7, 2));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftZ, ShuffleComponent.LeftW), uint2(2, 3));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY, ShuffleComponent.LeftW), uint2(5, 3));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightW, ShuffleComponent.LeftX), uint2(7, 0));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.RightW), uint2(6, 7));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY, ShuffleComponent.LeftZ), uint2(5, 2));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.RightZ), uint2(6, 6));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightW, ShuffleComponent.LeftX), uint2(7, 0));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY, ShuffleComponent.RightX), uint2(5, 4));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightW, ShuffleComponent.RightY), uint2(7, 5));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightX, ShuffleComponent.LeftX), uint2(4, 0));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftY, ShuffleComponent.LeftW), uint2(1, 3));
+        }
+
+        [TestCompiler]
+        public static void uint4_shuffle_result_3()
+        {
+            uint4 a = uint4(0, 1, 2, 3);
+            uint4 b = uint4(4, 5, 6, 7);
+
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftZ, ShuffleComponent.RightW, ShuffleComponent.RightY), uint3(2, 7, 5));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.LeftX, ShuffleComponent.LeftW), uint3(6, 0, 3));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftZ, ShuffleComponent.RightW, ShuffleComponent.RightX), uint3(2, 7, 4));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY, ShuffleComponent.LeftX, ShuffleComponent.LeftZ), uint3(5, 0, 2));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightW, ShuffleComponent.RightZ, ShuffleComponent.LeftZ), uint3(7, 6, 2));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftW, ShuffleComponent.LeftY, ShuffleComponent.LeftY), uint3(3, 1, 1));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftW, ShuffleComponent.RightY, ShuffleComponent.RightX), uint3(3, 5, 4));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftW, ShuffleComponent.LeftY, ShuffleComponent.RightW), uint3(3, 1, 7));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.RightY, ShuffleComponent.RightZ), uint3(6, 5, 6));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY, ShuffleComponent.RightX, ShuffleComponent.LeftY), uint3(5, 4, 1));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightW, ShuffleComponent.RightW, ShuffleComponent.LeftX), uint3(7, 7, 0));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.LeftY, ShuffleComponent.RightY), uint3(6, 1, 5));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.LeftY, ShuffleComponent.RightW), uint3(6, 1, 7));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftW, ShuffleComponent.RightY, ShuffleComponent.RightY), uint3(3, 5, 5));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.LeftX, ShuffleComponent.RightY), uint3(6, 0, 5));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY, ShuffleComponent.LeftY, ShuffleComponent.RightW), uint3(5, 1, 7));
+        }
+
+        [TestCompiler]
+        public static void uint4_shuffle_result_4()
+        {
+            uint4 a = uint4(0, 1, 2, 3);
+            uint4 b = uint4(4, 5, 6, 7);
+
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftY, ShuffleComponent.LeftW, ShuffleComponent.RightX, ShuffleComponent.LeftZ), uint4(1, 3, 4, 2));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY, ShuffleComponent.LeftW, ShuffleComponent.RightZ, ShuffleComponent.RightZ), uint4(5, 3, 6, 6));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.RightZ, ShuffleComponent.RightW, ShuffleComponent.LeftZ), uint4(6, 6, 7, 2));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightX, ShuffleComponent.RightY, ShuffleComponent.LeftZ, ShuffleComponent.LeftZ), uint4(4, 5, 2, 2));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.LeftY, ShuffleComponent.LeftY, ShuffleComponent.LeftX), uint4(6, 1, 1, 0));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightX, ShuffleComponent.RightY, ShuffleComponent.RightY, ShuffleComponent.RightW), uint4(4, 5, 5, 7));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftY, ShuffleComponent.RightW, ShuffleComponent.LeftX, ShuffleComponent.RightW), uint4(1, 7, 0, 7));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY, ShuffleComponent.LeftX, ShuffleComponent.LeftY, ShuffleComponent.LeftX), uint4(5, 0, 1, 0));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightX, ShuffleComponent.RightW, ShuffleComponent.LeftW, ShuffleComponent.LeftY), uint4(4, 7, 3, 1));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightY, ShuffleComponent.RightX, ShuffleComponent.LeftY, ShuffleComponent.RightX), uint4(5, 4, 1, 4));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftX, ShuffleComponent.LeftZ, ShuffleComponent.RightZ, ShuffleComponent.LeftX), uint4(0, 2, 6, 0));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftZ, ShuffleComponent.RightY, ShuffleComponent.RightW, ShuffleComponent.RightW), uint4(2, 5, 7, 7));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftW, ShuffleComponent.RightX, ShuffleComponent.LeftZ, ShuffleComponent.RightX), uint4(3, 4, 2, 4));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightX, ShuffleComponent.LeftX, ShuffleComponent.LeftZ, ShuffleComponent.LeftW), uint4(4, 0, 2, 3));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.RightZ, ShuffleComponent.RightX, ShuffleComponent.LeftX, ShuffleComponent.RightY), uint4(6, 4, 0, 5));
+            TestUtils.AreEqual(shuffle(a, b, ShuffleComponent.LeftW, ShuffleComponent.RightW, ShuffleComponent.LeftY, ShuffleComponent.RightY), uint4(3, 7, 1, 5));
+        }
+
+
+    }
+}

@@ -20,6 +20,7 @@ public class UIController : MonoBehaviour
     }
     private void Start()
     {
+        GameController.isDead = false;
         deadText.text = "";
         deadImage.color = Color.clear;
         Time.timeScale = 1;
