@@ -20,7 +20,7 @@ public class UIController : MonoBehaviour
     }
     private void Start()
     {
-        GameController.isDead = false;
+        GameController.IsDead = false;
         deadText.text = "";
         deadImage.color = Color.clear;
         Time.timeScale = 1;
@@ -28,7 +28,7 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !GameController.isDead)
+        if (Input.GetKeyDown(KeyCode.Escape) && !GameController.IsDead)
         {
             if (Time.timeScale == 1)
             {
@@ -62,14 +62,14 @@ public class UIController : MonoBehaviour
     public void Restart()
     {
         UnPause();
-        GameController.isDead = true;
+        GameController.IsDead = true;
         TransitionManager.Instance.StartLoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Exit()
     {
         UnPause();
-        GameController.isDead = true;
+        GameController.IsDead = true;
         TransitionManager.Instance.StartLoadScene("MainMenu");
     }
 }

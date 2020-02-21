@@ -5,9 +5,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    private AudioSource audioSource;
-    private string audioString;
-    private AudioClip playerJump, playerHit, playerWalk, playerIncorrect, playerCorrect, onGameEnd, buttonPressed;
+    [HideInInspector] public AudioSource audioSource;
+    public AudioClip playerJump, playerHit, playerWalk, playerIncorrect, playerCorrect, onGameEnd, buttonPressed;
 
     void Awake()
     {

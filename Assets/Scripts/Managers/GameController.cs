@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     [Header("References")]
     [SerializeField] protected AnimalManager animalManager;
     [SerializeField] protected UIController uiController;
+    [SerializeField] protected Image winPanel;
 
     [Space] [Header("Questions")] [SerializeField]
     protected int questionAmount = 10;
@@ -49,7 +50,7 @@ public class GameController : MonoBehaviour
     protected float timeStartGame = 10f; //Time till game starts
 
     [SerializeField] protected Health health;
-    [SerializeField] public static bool isDead = false;
+    [SerializeField] public static bool IsDead = false;
     [SerializeField] protected float timeQuestion = 10f; //Time between questions
     [SerializeField] protected float timeBetweenQuestion = 3f;
     [SerializeField] protected float animSpeed = 0.25f;
@@ -63,7 +64,7 @@ public class GameController : MonoBehaviour
         {
             gameObject.GetComponent<Health>();
         }
-        GameController.isDead = false;
+        GameController.IsDead = false;
         questionList = ShuffleQuestion(animalManager.animalList, questionAmount);
     }
 
@@ -148,14 +149,16 @@ public class GameController : MonoBehaviour
         {
             animalSprite.sprite = correctImage;
             animalSprite.rectTransform.DOShakeScale(animSpeed, animSpeed).SetEase(Ease.InOutQuint);
+            AudioManager.Instance.PlayCorrect();
         }
         else
         {
             animalSprite.sprite = incorrectImage;
             animalSprite.rectTransform.DOShakeScale(animSpeed, animSpeed).SetEase(Ease.InOutQuint);
+            AudioManager.Instance.PlayIncorrect();
             if (health.DecreaseHealth())
             {
-                isDead = true;
+                IsDead = true;
                 UIController.Instance.GameOver(); //GAME OVER
                 return;
             }
@@ -164,7 +167,7 @@ public class GameController : MonoBehaviour
 
         if (currentQuestion >= questionAmount)
         {
-            //GAME FINISHED
+            StartGameEnd();
         }
         else if (currentQuestion < questionAmount)
         {
@@ -172,6 +175,20 @@ public class GameController : MonoBehaviour
         }
     }
 
+    protected virtual void StartGameEnd()
+    {
+        StartCoroutine(OnGameFinished());
+    }
+        
+    IEnumerator  OnGameFinished()
+    {
+        AudioManager.Instance.PlayGameEnd();
+        winPanel.gameObject.SetActive(true);
+        winPanel.rectTransform.DOShakeScale(0.25f,0.25f).SetUpdate(true);
+        yield return new WaitForSeconds(5);
+        TransitionManager.Instance.StartLoadScene("LevelSelect");
+    }
+    
     public virtual void OnPlayerEnterZone(string word,AnswerZone answerZone)
     {
         AnsweredWord = word;

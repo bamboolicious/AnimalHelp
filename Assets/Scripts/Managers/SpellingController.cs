@@ -56,4 +56,10 @@ public class SpellingController : GameController
 
         StartCoroutine(StartCountDown(timeQuestion, CheckQuestion)); //START THE COUNTDOWN
     }
+
+    protected override void StartGameEnd()
+    {
+        base.StartGameEnd();
+        LevelController.SpellingWon = true;
+    }
 }

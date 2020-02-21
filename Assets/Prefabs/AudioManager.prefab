@@ -140,3 +140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ecb6401d73fa7945a385b4ae2d31768, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  playerJump: {fileID: 8300000, guid: 81bde9b8bf6d4e44faae0c82311ee3df, type: 3}
+  playerHit: {fileID: 8300000, guid: cac896f620829404580bfd4afe3941f0, type: 3}
+  playerWalk: {fileID: 8300000, guid: 0673e701c1ec5f24fa6b7dce7a9d64b8, type: 3}
+  playerIncorrect: {fileID: 8300000, guid: d6090209fa9772149acf404bdd76be6a, type: 3}
+  playerCorrect: {fileID: 8300000, guid: 9973a9140d46b9e4d89698870870747c, type: 3}
+  onGameEnd: {fileID: 8300000, guid: 4769ec196a5b81b4483c60375a2eea2a, type: 3}
+  buttonPressed: {fileID: 8300000, guid: 41a6b8268969b11419ffa8243d106c04, type: 3}

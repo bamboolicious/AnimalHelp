@@ -41,6 +41,7 @@ public class AnswerZone : MonoBehaviour
     }
     private void OnPlayerHit()
     {
+        AudioManager.Instance.PlayHit();
         punchTween.Restart();
         gameController.OnPlayerEnterZone(answerText.text,this);
     }

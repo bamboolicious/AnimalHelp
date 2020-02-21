@@ -45,18 +45,12 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (GameController.isDead) return;
+        if (GameController.IsDead) return;
         CheckGround();
         Walk(moveDir);
         Jump();
     }
 
-    private void ResetPlayerPos()
-    {
-        transform.position = startPos;
-        rb.velocity = Vector2.zero;
-    }
-    
     private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + downOffset, collisionRadius, groundLayer);
@@ -68,6 +62,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetButton("Jump"))
         {
+            AudioManager.Instance.PlayJump();
             rb.AddForce(Vector2.up * jumpForce);
             jumped = true;
         }

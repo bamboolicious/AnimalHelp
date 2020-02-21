@@ -34,14 +34,19 @@ public class TransitionManager : MonoBehaviour
 
     public void StartLoadScene(string scene)
     {
+        fadeImage.gameObject.SetActive(true);
         async = SceneManager.LoadSceneAsync(scene);
         async.allowSceneActivation = false;
-        fadeImage.DOFade(1, 0.25f).OnComplete(AllowLoadScene).SetUpdate(true);
-        fadeImage.gameObject.SetActive(false);
+        fadeImage.DOFade(1, 1f).OnComplete(AllowLoadScene).SetUpdate(true);
     }
 
     public void AllowLoadScene()
     {
         async.allowSceneActivation = true;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

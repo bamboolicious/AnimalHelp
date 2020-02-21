@@ -54,5 +54,10 @@ namespace Managers
             StartCoroutine(StartCountDown(timeQuestion, CheckQuestion)); //START THE COUNTDOWN
         }
     
+        protected override void StartGameEnd()
+        {
+            base.StartGameEnd();
+            LevelController.MatchingWon = true;
+        }
     }
 }
