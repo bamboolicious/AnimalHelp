@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TransitionManager : MonoBehaviour
 {
@@ -28,9 +28,8 @@ public class TransitionManager : MonoBehaviour
     private void UnfadeScene()
     {
         fadeImage.gameObject.SetActive(true);
-        fadeImage.DOFade(0,1f);
+        fadeImage.DOFade(0, 1f);
     }
-
 
     public void StartLoadScene(string scene)
     {
@@ -49,4 +48,10 @@ public class TransitionManager : MonoBehaviour
     {
         Application.Quit();
     }
+    public void ResetVariables()
+    {
+        LevelController.MatchingWon = false;
+        LevelController.SpellingWon = false;
+    }
+
 }

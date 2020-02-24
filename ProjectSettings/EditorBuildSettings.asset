@@ -13,8 +13,14 @@ EditorBuildSettings:
     guid: 5b33d887fb9ced74cbecd2db31cb7ac2
   - enabled: 1
     path: Assets/Scenes/Spelling.unity
-    guid: 6659fddd2b10fe5458258dcd2001f136
+    guid: 62968d359120138438e90c95d3e9643f
   - enabled: 1
     path: Assets/Scenes/Matching.unity
     guid: 4244a4f1d49ddab47a800037ad4df916
+  - enabled: 1
+    path: Assets/Scenes/Cutscene_Main.unity
+    guid: 6e5802b7824e00f4890dac9935760ec3
+  - enabled: 1
+    path: Assets/Scenes/Cutscene_End.unity
+    guid: b21318ce3be54dd41bba7e6a2c205942
   m_configObjects: {}

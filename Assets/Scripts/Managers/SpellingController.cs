@@ -17,9 +17,7 @@ public class SpellingController : GameController
 
     protected override void OnStart()
     {
-        OnGameStart?.Invoke();
-        questionList = ShuffleQuestion(animalManager.animalList, questionAmount);
-        StartCoroutine(StartCountDown(timeStartGame, ShuffleAnswerAndDisplayQuestion));
+        base.OnStart();
     }
 
 

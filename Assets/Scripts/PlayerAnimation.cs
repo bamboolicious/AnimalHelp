@@ -11,11 +11,11 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Awake()
     {
-        if(animator == null)
+        if (animator == null)
         {
             animator = GetComponentInChildren<Animator>();
         }
-        if(playerController == null)
+        if (playerController == null)
         {
             playerController?.GetComponent<PlayerController>();
         }
@@ -23,7 +23,7 @@ public class PlayerAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -36,12 +36,12 @@ public class PlayerAnimation : MonoBehaviour
     private void FlipControl()
     {
 
-        if(facingRight == true && playerController.rb.velocity.x < 0)
+        if (facingRight == true && playerController.rb.velocity.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
             facingRight = false;
         }
-        else if(facingRight == false && playerController.rb.velocity.x > 0)
+        else if (facingRight == false && playerController.rb.velocity.x > 0)
         {
             facingRight = true;
             transform.localScale = new Vector3(1, 1, 1);
@@ -49,7 +49,7 @@ public class PlayerAnimation : MonoBehaviour
     }
     private void AnimationControl()
     {
-        if(Mathf.Abs(playerController.rb.velocity.x) > 2 && playerController.isGrounded)
+        if (Mathf.Abs(playerController.rb.velocity.x) > 2 && playerController.isGrounded)
         {
             animator.SetBool("Walk", true);
             animator.SetBool("Jump", false);

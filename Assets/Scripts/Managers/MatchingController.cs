@@ -17,9 +17,7 @@ namespace Managers
 
         protected override void OnStart()
         {
-            OnGameStart?.Invoke();
-            questionList = ShuffleQuestion(animalManager.animalList, questionAmount);
-            StartCoroutine(StartCountDown(timeStartGame,ShuffleAnswerAndDisplayQuestion));
+            base.OnStart();
         }
 
         protected override void ShuffleAnswerAndDisplayQuestion()

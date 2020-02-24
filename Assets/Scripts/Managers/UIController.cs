@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Image deadImage;
     [SerializeField] private TextMeshProUGUI deadText;
     [SerializeField] private string deadString;
+    [SerializeField] private Sprite loseSprite, pauseSprite;
 
     private void Awake()
     {
@@ -22,7 +23,7 @@ public class UIController : MonoBehaviour
     {
         GameController.IsDead = false;
         deadText.text = "";
-        deadImage.color = Color.clear;
+        deadImage.color = Color.white;
         Time.timeScale = 1;
     }
 
@@ -43,7 +44,8 @@ public class UIController : MonoBehaviour
     private void Pause()
     {
         pausePanel.gameObject.SetActive(true);
-        pausePanel.rectTransform.DOShakeScale(0.25f,0.25f).SetUpdate(true);
+        deadImage.sprite = pauseSprite;
+        pausePanel.rectTransform.DOShakeScale(0.25f, 0.25f).SetUpdate(true);
         Time.timeScale = 0;
     }
     private void UnPause()
@@ -55,7 +57,7 @@ public class UIController : MonoBehaviour
     public void GameOver()
     {
         deadText.text = deadString;
-        deadImage.color = Color.white;
+        deadImage.sprite = loseSprite;
         Pause();
     }
 

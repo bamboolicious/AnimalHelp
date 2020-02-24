@@ -288,7 +288,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 45b3b08338c89714e8c0cc071a9f1ade, type: 3}
+      objectReference: {fileID: 8300000, guid: 2d3e8e504418bba46b7988dd0243a772, type: 3}
     - target: {fileID: 5181262436534341509, guid: 5f3c2fd98023a97478a638014b668579,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -461,7 +461,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -478,7 +478,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -502,7 +502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976387887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -7.71, y: -0.71, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -561,9 +561,9 @@ MonoBehaviour:
   onRewind:
     m_PersistentCalls:
       m_Calls: []
-  delay: 0
+  delay: 2
   duration: 20
-  easeType: 7
+  easeType: 37
   easeCurve:
     serializedVersion: 2
     m_Curve:
@@ -576,6 +576,42 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
+    - serializedVersion: 3
+      time: 0.082743555
+      value: 0.11915243
+      inSlope: 1.2058254
+      outSlope: 1.2058254
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.3730489
+      value: 0.39850795
+      inSlope: 1.3684754
+      outSlope: 1.3684754
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.6411275
+      value: 0.59907514
+      inSlope: 1.582687
+      outSlope: 1.582687
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.84847736
+      value: 0.81055266
+      inSlope: 2.3627117
+      outSlope: 2.3627117
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.19416474
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
@@ -600,83 +636,146 @@ MonoBehaviour:
   relative: 0
   isLocal: 0
   isClosedPath: 0
-  pathResolution: 2
-  pathMode: 2
+  pathResolution: 10
+  pathMode: 0
   lockRotation: 0
   assignForwardAndUp: 0
   forwardDirection: {x: 0, y: 0, z: 1}
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: 0.02873993, y: -3.432996, z: -10}
-  - {x: 0.008884907, y: -12.271525, z: -10}
-  - {x: 0.008744717, y: -23.77729, z: -10}
+  - {x: 9.620616, y: -1.8591633, z: -10}
+  - {x: -9.726362, y: -12.162376, z: -10}
+  - {x: 10.057606, y: -12.714464, z: -10}
+  - {x: -9.145015, y: -23.855171, z: -10}
   fullWps: []
   path:
     wpLengths:
     - 0
-    - 3.4331164
-    - 8.8385515
-    - 11.505765
-    type: 0
+    - 17.636951
+    - 22.09143
+    - 20.100216
+    - 22.3711
+    type: 1
     subdivisionsXSegment: 10
-    subdivisions: 40
+    subdivisions: 50
     wps:
-    - {x: 0, y: 0, z: -10}
-    - {x: 0.02873993, y: -3.432996, z: -10}
-    - {x: 0.008884907, y: -12.271525, z: -10}
-    - {x: 0.008744717, y: -23.77729, z: -10}
-    controlPoints: []
-    length: 23.777431
+    - {x: -7.71, y: -0.71, z: -10}
+    - {x: 9.620616, y: -1.8591633, z: -10}
+    - {x: -9.726362, y: -12.162376, z: -10}
+    - {x: 10.057606, y: -12.714464, z: -10}
+    - {x: -9.145015, y: -23.855171, z: -10}
+    controlPoints:
+    - a: {x: 9.620616, y: -1.8591633, z: -10}
+      b: {x: 0, y: 0, z: 0}
+    - a: {x: -28.347637, y: -34.99588, z: -10}
+      b: {x: 0, y: 0, z: 0}
+    length: 82.26183
     isFinalized: 1
     timesTable:
-    - 0
-    - 0.1443855
-    - 0.51610565
+    - 0.02
+    - 0.04
+    - 0.06
+    - 0.08
+    - 0.099999994
+    - 0.12
+    - 0.14
+    - 0.16
+    - 0.17999999
+    - 0.19999999
+    - 0.22
+    - 0.24
+    - 0.26
+    - 0.28
+    - 0.29999998
+    - 0.32
+    - 0.34
+    - 0.35999998
+    - 0.38
+    - 0.39999998
+    - 0.42
+    - 0.44
+    - 0.45999998
+    - 0.48
+    - 0.5
+    - 0.52
+    - 0.53999996
+    - 0.56
+    - 0.58
+    - 0.59999996
+    - 0.62
+    - 0.64
+    - 0.65999997
+    - 0.68
+    - 0.7
+    - 0.71999997
+    - 0.74
+    - 0.76
+    - 0.78
+    - 0.79999995
+    - 0.82
+    - 0.84
+    - 0.85999995
+    - 0.88
+    - 0.9
+    - 0.91999996
+    - 0.94
+    - 0.96
+    - 0.97999996
     - 1
     lengthsTable:
-    - 0.023114223
-    - 0.091223195
-    - 0.20247649
-    - 0.3550238
-    - 0.5470152
-    - 0.7766008
-    - 1.0419307
-    - 1.3411562
-    - 1.6724277
-    - 2.0338967
-    - 2.4237144
-    - 2.840033
-    - 3.2810051
-    - 3.7499511
-    - 4.2610745
-    - 4.812232
-    - 5.3999567
-    - 6.0207844
-    - 6.671248
-    - 7.3478823
-    - 8.047222
-    - 8.7657995
-    - 9.50015
-    - 10.246809
-    - 11.002309
-    - 11.763185
-    - 12.527658
-    - 13.314261
-    - 14.126371
-    - 14.960609
-    - 15.813603
-    - 16.681974
-    - 17.562347
-    - 18.451347
-    - 19.3456
-    - 20.241728
-    - 21.136353
-    - 22.026104
-    - 22.907604
-    - 23.777473
+    - 0.32119393
+    - 1.2115116
+    - 2.5611005
+    - 4.260187
+    - 6.199112
+    - 8.268405
+    - 10.358905
+    - 12.36202
+    - 14.1703
+    - 15.679021
+    - 16.791693
+    - 17.450851
+    - 17.925705
+    - 18.89044
+    - 20.380384
+    - 22.298075
+    - 24.530848
+    - 26.96217
+    - 29.474209
+    - 31.948727
+    - 34.267677
+    - 36.313896
+    - 37.972775
+    - 39.13849
+    - 39.75576
+    - 40.26234
+    - 41.281757
+    - 42.796135
+    - 44.700634
+    - 46.878014
+    - 49.207726
+    - 51.56816
+    - 53.837624
+    - 55.89513
+    - 57.621902
+    - 58.906296
+    - 59.669884
+    - 60.133183
+    - 60.874737
+    - 61.98138
+    - 63.4254
+    - 65.1565
+    - 67.11802
+    - 69.25091
+    - 71.49504
+    - 73.78982
+    - 76.07447
+    - 78.28823
+    - 80.370636
+    - 82.26183
   inspectorMode: 0
-  pathType: 0
+  pathType: 1
   handlesType: 0
   livePreview: 1
   handlesDrawMode: 0
@@ -684,7 +783,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: 0, y: 0, z: -10}
+  lastSrcPosition: {x: -7.71, y: -0.71, z: -10}
   lastSrcRotation: {x: 0, y: 0, z: 0, w: 1}
   wpsDropdown: 0
   dropToFloorOffset: 0
@@ -899,7 +998,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b72d9f1f9ebc5d42b06e4bbb7d8855d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0754db61969f84e4a8264fb856a4ff21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f9d40109bc72a4d85b77d00d6455d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToChange: LevelSelect
+  sceneToChange: MainMenu
   skipText: {fileID: 112158416}
 --- !u!20 &976387889
 Camera:
@@ -461,7 +461,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -478,7 +478,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -502,7 +502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976387887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -7.83, y: -0.79, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -552,7 +552,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LevelSelect
+          m_StringArgument: MainMenu
           m_BoolArgument: 0
         m_CallState: 2
   onTweenCreated:
@@ -561,9 +561,9 @@ MonoBehaviour:
   onRewind:
     m_PersistentCalls:
       m_Calls: []
-  delay: 0
+  delay: 2
   duration: 20
-  easeType: 7
+  easeType: 37
   easeCurve:
     serializedVersion: 2
     m_Curve:
@@ -576,6 +576,51 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
+    - serializedVersion: 3
+      time: 0.078577906
+      value: 0.11445272
+      inSlope: 1.2058254
+      outSlope: 1.2058254
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.26471913
+      value: 0.2596835
+      inSlope: 1.3684754
+      outSlope: 1.3684754
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.41195577
+      value: 0.45788556
+      inSlope: 1.582687
+      outSlope: 1.582687
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.7318097
+      value: 0.7352656
+      inSlope: 2.3627117
+      outSlope: 2.3627117
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.19416474
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9041883
+      value: 0.9158851
+      inSlope: 2.475898
+      outSlope: 2.475898
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.88962257
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
@@ -600,83 +645,169 @@ MonoBehaviour:
   relative: 0
   isLocal: 0
   isClosedPath: 0
-  pathResolution: 2
-  pathMode: 2
+  pathResolution: 10
+  pathMode: 0
   lockRotation: 0
   assignForwardAndUp: 0
   forwardDirection: {x: 0, y: 0, z: 1}
   upDirection: {x: 0, y: 1, z: 0}
   tweenRigidbody: 0
   wps:
-  - {x: 0.02873993, y: -3.432996, z: -10}
-  - {x: 0.008884907, y: -12.271525, z: -10}
-  - {x: 0.008744717, y: -23.77729, z: -10}
+  - {x: 9.620616, y: -1.8591633, z: -10}
+  - {x: -10.318123, y: -12.902393, z: -10}
+  - {x: 10.057606, y: -12.714464, z: -10}
+  - {x: -9.145015, y: -23.855171, z: -10}
+  - {x: 9.004762, y: -23.988724, z: -10}
   fullWps: []
   path:
     wpLengths:
     - 0
-    - 3.4331164
-    - 8.8385515
-    - 11.505765
-    type: 0
+    - 17.785282
+    - 22.959423
+    - 20.661955
+    - 22.379108
+    - 18.461287
+    type: 1
     subdivisionsXSegment: 10
-    subdivisions: 40
+    subdivisions: 60
     wps:
-    - {x: 0, y: 0, z: -10}
-    - {x: 0.02873993, y: -3.432996, z: -10}
-    - {x: 0.008884907, y: -12.271525, z: -10}
-    - {x: 0.008744717, y: -23.77729, z: -10}
-    controlPoints: []
-    length: 23.777431
+    - {x: -7.83, y: -0.79, z: -10}
+    - {x: 9.620616, y: -1.8591633, z: -10}
+    - {x: -10.318123, y: -12.902393, z: -10}
+    - {x: 10.057606, y: -12.714464, z: -10}
+    - {x: -9.145015, y: -23.855171, z: -10}
+    - {x: 9.004762, y: -23.988724, z: -10}
+    controlPoints:
+    - a: {x: 9.620616, y: -1.8591633, z: -10}
+      b: {x: 0, y: 0, z: 0}
+    - a: {x: 27.154537, y: -24.122276, z: -10}
+      b: {x: 0, y: 0, z: 0}
+    length: 102.323586
     isFinalized: 1
     timesTable:
-    - 0
-    - 0.1443855
-    - 0.51610565
+    - 0.016666668
+    - 0.033333335
+    - 0.050000004
+    - 0.06666667
+    - 0.083333336
+    - 0.10000001
+    - 0.116666675
+    - 0.13333334
+    - 0.15
+    - 0.16666667
+    - 0.18333334
+    - 0.20000002
+    - 0.21666668
+    - 0.23333335
+    - 0.25
+    - 0.26666668
+    - 0.28333336
+    - 0.3
+    - 0.3166667
+    - 0.33333334
+    - 0.35000002
+    - 0.36666667
+    - 0.38333336
+    - 0.40000004
+    - 0.4166667
+    - 0.43333337
+    - 0.45000002
+    - 0.4666667
+    - 0.48333335
+    - 0.5
+    - 0.5166667
+    - 0.53333336
+    - 0.55
+    - 0.5666667
+    - 0.5833334
+    - 0.6
+    - 0.6166667
+    - 0.6333334
+    - 0.65000004
+    - 0.6666667
+    - 0.6833334
+    - 0.70000005
+    - 0.7166667
+    - 0.73333335
+    - 0.75000006
+    - 0.7666667
+    - 0.78333336
+    - 0.8000001
+    - 0.8166667
+    - 0.8333334
+    - 0.85
+    - 0.86666673
+    - 0.8833334
+    - 0.90000004
+    - 0.9166667
+    - 0.9333334
+    - 0.95000005
+    - 0.9666667
+    - 0.9833334
     - 1
     lengthsTable:
-    - 0.023114223
-    - 0.091223195
-    - 0.20247649
-    - 0.3550238
-    - 0.5470152
-    - 0.7766008
-    - 1.0419307
-    - 1.3411562
-    - 1.6724277
-    - 2.0338967
-    - 2.4237144
-    - 2.840033
-    - 3.2810051
-    - 3.7499511
-    - 4.2610745
-    - 4.812232
-    - 5.3999567
-    - 6.0207844
-    - 6.671248
-    - 7.3478823
-    - 8.047222
-    - 8.7657995
-    - 9.50015
-    - 10.246809
-    - 11.002309
-    - 11.763185
-    - 12.527658
-    - 13.314261
-    - 14.126371
-    - 14.960609
-    - 15.813603
-    - 16.681974
-    - 17.562347
-    - 18.451347
-    - 19.3456
-    - 20.241728
-    - 21.136353
-    - 22.026104
-    - 22.907604
-    - 23.777473
+    - 0.3517128
+    - 1.322846
+    - 2.7874498
+    - 4.6196756
+    - 6.693838
+    - 8.884516
+    - 11.066742
+    - 13.116429
+    - 14.911409
+    - 16.334612
+    - 17.287834
+    - 17.801434
+    - 18.575645
+    - 19.964901
+    - 21.880148
+    - 24.193962
+    - 26.771542
+    - 29.47584
+    - 32.16909
+    - 34.713524
+    - 36.972157
+    - 38.810432
+    - 40.102238
+    - 40.771927
+    - 41.307426
+    - 42.42555
+    - 44.091496
+    - 46.17997
+    - 48.553417
+    - 51.071095
+    - 53.59129
+    - 55.97229
+    - 58.073418
+    - 59.757244
+    - 60.898567
+    - 61.4583
+    - 62.115883
+    - 63.38012
+    - 65.182365
+    - 67.39847
+    - 69.895035
+    - 72.53598
+    - 75.184364
+    - 77.70318
+    - 79.9561
+    - 81.809
+    - 83.13523
+    - 83.849655
+    - 84.29589
+    - 85.00501
+    - 86.06316
+    - 87.43615
+    - 89.067696
+    - 90.89542
+    - 92.85467
+    - 94.879875
+    - 96.905075
+    - 98.86433
+    - 100.69205
+    - 102.323586
   inspectorMode: 0
-  pathType: 0
+  pathType: 1
   handlesType: 0
   livePreview: 1
   handlesDrawMode: 0
@@ -684,7 +815,7 @@ MonoBehaviour:
   showIndexes: 1
   showWpLength: 0
   pathColor: {r: 1, g: 1, b: 1, a: 0.5}
-  lastSrcPosition: {x: 0, y: 0, z: -10}
+  lastSrcPosition: {x: -7.83, y: -0.79, z: -10}
   lastSrcRotation: {x: 0, y: 0, z: 0, w: 1}
   wpsDropdown: 0
   dropToFloorOffset: 0
@@ -899,7 +1030,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b72d9f1f9ebc5d42b06e4bbb7d8855d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54e0ba0a1ef879a478eb57bc31c695db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

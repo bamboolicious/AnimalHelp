@@ -31,7 +31,6 @@ public class AestheticController : MonoBehaviour
         {
             gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         }
-        print(gameController);
         animalImage = gameController.animalSprite;
 
         GameController.OnPlayerAnswer += PlayerAnswer;

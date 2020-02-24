@@ -14,34 +14,34 @@ public class AudioManager : MonoBehaviour
         Instance = this;
     }
 
+    public void PlayWalk()
+    {
+        audioSource.PlayOneShot(playerWalk);
+
+    }
     public void PlayJump()
     {
         audioSource.PlayOneShot(playerJump);
     }
 
-     public void PlayHit()
+    public void PlayHit()
     {
         audioSource.PlayOneShot(playerHit);
     }
-    
-     public void PlayWalk()
-    {
-        audioSource.PlayOneShot(playerWalk);
-    }
 
-     public void PlayIncorrect()
+    public void PlayIncorrect()
     {
         audioSource.PlayOneShot(playerIncorrect);
     }
-     public void PlayCorrect()
+    public void PlayCorrect()
     {
         audioSource.PlayOneShot(playerCorrect);
     }
-     public void PlayGameEnd()
+    public void PlayGameEnd()
     {
         audioSource.PlayOneShot(onGameEnd);
     }
-     public void PlayButtonPress()
+    public void PlayButtonPress()
     {
         audioSource.PlayOneShot(buttonPressed);
     }
